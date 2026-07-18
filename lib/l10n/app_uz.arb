@@ -1,0 +1,255 @@
+{
+  "@@locale": "uz",
+  "appTitle": "Bilimdon",
+  "tabMap": "Xarita",
+  "tabShop": "Do’kon",
+  "tabRating": "Reyting",
+  "tabProfile": "Profil",
+  "levelBadge": "{n}-daraja",
+  "@levelBadge": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "chapterTitle": "{n}-BOB · {name}",
+  "@chapterTitle": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "chapter1Name": "MOLXONA",
+  "chapter1Sub": "Sanash va qo’shish",
+  "chapter2Name": "TOVUQXONA",
+  "chapter2Sub": "Ayirish",
+  "chapter3Name": "YAYLOV",
+  "chapter3Sub": "Shakllar va mantiq",
+  "startButton": "BOSHLA!",
+  "retryButton": "Qayta urinish",
+  "comingSoon": "Tez kunda!",
+  "bubblePigHi": "Xryu! Salom!",
+  "bubbleChickenHi": "Qo-qo-qo!",
+  "bubbleSheepHi": "Bee-e!",
+  "bubbleCowPlay": "Muu! O’ynaymizmi?",
+  "bubbleDuckHi": "Vaq-vaq!",
+  "bubbleRabbitHi": "Sakrab o’ynaymiz!",
+  "tagCounting": "SANASH",
+  "tagAddition": "QO’SHISH",
+  "tagSubtraction": "AYIRISH",
+  "tagShapes": "SHAKLLAR",
+  "tagSequence": "MANTIQ",
+  "tagComparison": "TAQQOSLASH",
+  "promptCount": "{animal, select, chick{Nechta jo’jacha?} pig{Nechta cho’chqacha?} sheep{Nechta qo’zichoq?} other{Nechta?}}",
+  "@promptCount": {
+    "placeholders": {
+      "animal": {
+        "type": "String"
+      }
+    }
+  },
+  "promptFindShape": "{shape, select, triangle{Uchburchakni top!} circle{Doirani top!} square{Kvadratni top!} diamond{Rombni top!} other{Shaklni top!}}",
+  "@promptFindShape": {
+    "placeholders": {
+      "shape": {
+        "type": "String"
+      }
+    }
+  },
+  "promptBiggest": "Qaysi son eng katta?",
+  "promptSmallest": "Qaysi son eng kichik?",
+  "questionOf": "Savol {n} / {total}",
+  "@questionOf": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "bubbleNeutral": "Qani, o’ylab ko’r-chi...",
+  "bubbleCorrect1": "Muu! Zo’r! +{coins} tanga",
+  "@bubbleCorrect1": {
+    "placeholders": {
+      "coins": {
+        "type": "int"
+      }
+    }
+  },
+  "bubbleCorrect2": "Muu! Juda to’g’ri! Sen zo’rsan!",
+  "bubbleCorrect3": "Muu! Barakalla!",
+  "bubbleWrong1": "Hechqisi yo’q, yana urin!",
+  "bubbleWrong2": "Muu! Yana bir bor o’ylab ko’r!",
+  "bubbleHint1": "Kel, birga sanaymiz: bir, ikki, uch...",
+  "bubbleHint2": "Rasmga qara — u senga yordam beradi!",
+  "bubbleReveal": "Javob mana bu edi! Keyingisini birga topamiz!",
+  "bubbleTimeUp": "Vaqt tugadi, hechqisi yo’q — davom etamiz!",
+  "finishTitle": "Muu! Barakalla!",
+  "finishSubtitle": "{level}-daraja tugadi",
+  "@finishSubtitle": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "plusCoins": "+{n} tanga",
+  "@plusCoins": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "playAgain": "Qaytadan o’ynash",
+  "continueButton": "Davom etish",
+  "shopTitle": "Do’kon",
+  "shopKeeperHi": "Bee-e! Xush kelibsiz!",
+  "shopCatDecor": "Ferma bezaklari",
+  "shopCatAccessory": "Aksessuarlar",
+  "shopBuy": "Sotib olish",
+  "shopEquip": "Kiyish",
+  "shopUnequip": "Yechish",
+  "shopPlace": "Qo’yish",
+  "shopRemove": "Olib qo’yish",
+  "shopOwned": "Sizniki",
+  "shopNotEnough": "Tanga yetmaydi!",
+  "itemFlowerBed": "Gul to’plami",
+  "itemTree": "Olma daraxti",
+  "itemHay": "Pichan g’arami",
+  "itemPond": "Ko’lcha",
+  "itemCowHat": "Sigir shlyapasi",
+  "itemChickBow": "Jo’ja bantigi",
+  "itemPigGlasses": "Cho’chqa ko’zoynagi",
+  "itemSheepScarf": "Qo’y sharfi",
+  "ratingSoonBubble": "Xryu! Reyting tez kunda!",
+  "shopSoonBubble": "Bee-e! Do’kon tez kunda ochiladi!",
+  "profileTitle": "Profil",
+  "settingsTitle": "Sozlamalar",
+  "settingSound": "Ovoz",
+  "settingMusic": "Musiqa",
+  "settingLanguage": "Til",
+  "settingTimer": "Tezkor rejim (taymer)",
+  "statsTitle": "Natijalar (ota-onalar uchun)",
+  "statQuestions": "Javob berilgan savollar",
+  "statCorrectFirstTry": "Birinchi urinishda to’g’ri",
+  "statStars": "Yig’ilgan yulduzlar",
+  "statLevels": "Tugatilgan darajalar",
+  "statStreak": "O’ynagan kunlar",
+  "statCoins": "Tangalar",
+  "parentGateTitle": "Ota-onalar uchun",
+  "parentGatePrompt": "Davom etish uchun javob bering: {a} × {b} = ?",
+  "@parentGatePrompt": {
+    "placeholders": {
+      "a": {
+        "type": "int"
+      },
+      "b": {
+        "type": "int"
+      }
+    }
+  },
+  "parentGateWrong": "Noto’g’ri, yana urinib ko’ring",
+  "playerDefaultName": "Aziza",
+  "dailyGoal": "Bugungi maqsad: {n}/{total} savol",
+  "@dailyGoal": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "speedBonus": "Tezlik bonusi +{n}",
+  "@speedBonus": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "onbLangTitle": "Tilni tanlang",
+  "onbAboutTitle": "O’zingiz haqingizda",
+  "onbNameLabel": "Isming",
+  "onbNameHint": "Ismingni yoz",
+  "onbAgeLabel": "Yoshing",
+  "onbAvatarLabel": "Yoqqan hayvoningni tanla",
+  "onbNext": "Davom etish",
+  "onbStart": "Boshlash!",
+  "profileInfoTitle": "Ma’lumotlarim",
+  "tabContents": "Mundarija",
+  "contentsTitle": "Mundarija",
+  "contentsSubtitle": "Nimalar o’rganamiz",
+  "levelOfChapter": "{n}/{total}-daraja",
+  "@levelOfChapter": {
+    "placeholders": { "n": {"type": "int"}, "total": {"type": "int"} }
+  },
+  "starsProgress": "{done}/{total}",
+  "@starsProgress": {
+    "placeholders": { "done": {"type": "int"}, "total": {"type": "int"} }
+  },
+  "topic_1_1": "Sanash 1–5",
+  "topic_1_2": "Sanash 1–10",
+  "topic_1_3": "Aralash mashq",
+  "topic_1_4": "Qo’shish 5 gacha",
+  "topic_1_5": "Qo’shish 10 gacha",
+  "topic_1_6": "1-bob sinovi",
+  "topic_2_1": "Ayirish 5 gacha",
+  "topic_2_2": "Ayirish 10 gacha",
+  "topic_2_3": "Qo’shish va ayirish",
+  "topic_2_4": "Ketma-ketlik",
+  "topic_2_5": "Aralash mashq",
+  "topic_2_6": "2-bob sinovi",
+  "topic_3_1": "Shakllar",
+  "topic_3_2": "Shakllar 2",
+  "topic_3_3": "Mantiqiy ketma-ketlik",
+  "topic_3_4": "Qo’shish va ayirish",
+  "topic_3_5": "Taqqoslash",
+  "topic_3_6": "Katta sinov",
+  "chapter4Name": "KO’LMAK",
+  "chapter4Sub": "Sonlar 20 gacha",
+  "chapter5Name": "DALA",
+  "chapter5Sub": "Qo’shish-ayirish 20 gacha",
+  "chapter6Name": "BOG’",
+  "chapter6Sub": "Ko’paytirish",
+  "tagMultiplication": "KO’PAYTIRISH",
+  "topic_4_1": "Ketma-ketlik 20 gacha",
+  "topic_4_2": "Taqqoslash",
+  "topic_4_3": "Aralash mashq",
+  "topic_4_4": "Qo’shish 15 gacha",
+  "topic_4_5": "Aralash mashq",
+  "topic_4_6": "4-bob sinovi",
+  "topic_5_1": "Qo’shish 15 gacha",
+  "topic_5_2": "Qo’shish 20 gacha",
+  "topic_5_3": "Ayirish 15 gacha",
+  "topic_5_4": "Ayirish 20 gacha",
+  "topic_5_5": "Tezkor mashq",
+  "topic_5_6": "5-bob sinovi",
+  "topic_6_1": "Ko’paytirish 2×",
+  "topic_6_2": "Ko’paytirish 3×",
+  "topic_6_3": "Guruhlar",
+  "topic_6_4": "Aralash amallar",
+  "topic_6_5": "Taqqoslash",
+  "topic_6_6": "Yakuniy sinov",
+  "shopCatPowerup": "Yordamchilar",
+  "shopOwnedCount": "Sizda: {n}",
+  "@shopOwnedCount": {
+    "placeholders": { "n": {"type": "int"} }
+  },
+  "itemPowerHeart": "Qo’shimcha yurak",
+  "itemPowerHint": "Yordam",
+  "itemPowerSkip": "O’tkazish",
+  "itemPowerCoinX2": "Tanga ×2",
+  "failTitle": "Yana urinamiz!",
+  "failRetry": "Qaytadan",
+  "failExit": "Chiqish"
+}

@@ -1,0 +1,917 @@
+{
+  "schemaVersion": 1,
+  "chapter": {
+    "id": 5,
+    "levels": [
+      {
+        "id": "5-1",
+        "chapter": 5,
+        "index": 1,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "5-1-q1",
+            "type": "addition",
+            "data": {
+              "a": 2,
+              "b": 9,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                2,
+                9
+              ]
+            },
+            "answers": [
+              {
+                "number": 10
+              },
+              {
+                "number": 11
+              },
+              {
+                "number": 12
+              },
+              {
+                "number": 13
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "5-1-q2",
+            "type": "addition",
+            "data": {
+              "a": 8,
+              "b": 4,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                8,
+                4
+              ]
+            },
+            "answers": [
+              {
+                "number": 4
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 12
+              },
+              {
+                "number": 11
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "5-1-q3",
+            "type": "addition",
+            "data": {
+              "a": 4,
+              "b": 10,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 15
+              },
+              {
+                "number": 14
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 12
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "5-1-q4",
+            "type": "addition",
+            "data": {
+              "a": 3,
+              "b": 8,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                3,
+                8
+              ]
+            },
+            "answers": [
+              {
+                "number": 9
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 11
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "5-1-q5",
+            "type": "addition",
+            "data": {
+              "a": 6,
+              "b": 4,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                6,
+                4
+              ]
+            },
+            "answers": [
+              {
+                "number": 6
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 11
+              }
+            ],
+            "correctIndex": 2
+          }
+        ]
+      },
+      {
+        "id": "5-2",
+        "chapter": 5,
+        "index": 2,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "5-2-q1",
+            "type": "addition",
+            "data": {
+              "a": 8,
+              "b": 10,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 17
+              },
+              {
+                "number": 18
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 19
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "5-2-q2",
+            "type": "addition",
+            "data": {
+              "a": 10,
+              "b": 8,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 18
+              },
+              {
+                "number": 20
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 16
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "5-2-q3",
+            "type": "addition",
+            "data": {
+              "a": 7,
+              "b": 8,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 16
+              },
+              {
+                "number": 15
+              },
+              {
+                "number": 13
+              },
+              {
+                "number": 8
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "5-2-q4",
+            "type": "addition",
+            "data": {
+              "a": 9,
+              "b": 9,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 17
+              },
+              {
+                "number": 18
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 16
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "5-2-q5",
+            "type": "addition",
+            "data": {
+              "a": 5,
+              "b": 10,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 13
+              },
+              {
+                "number": 17
+              },
+              {
+                "number": 15
+              },
+              {
+                "number": 10
+              }
+            ],
+            "correctIndex": 2
+          }
+        ]
+      },
+      {
+        "id": "5-3",
+        "chapter": 5,
+        "index": 3,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "5-3-q1",
+            "type": "subtraction",
+            "data": {
+              "a": 12,
+              "b": 5,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "faded",
+              "animal": "sheep",
+              "count": 12,
+              "faded": 5
+            },
+            "answers": [
+              {
+                "number": 5
+              },
+              {
+                "number": 12
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 7
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "5-3-q2",
+            "type": "subtraction",
+            "data": {
+              "a": 10,
+              "b": 1,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "faded",
+              "animal": "sheep",
+              "count": 10,
+              "faded": 1
+            },
+            "answers": [
+              {
+                "number": 8
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 11
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "5-3-q3",
+            "type": "subtraction",
+            "data": {
+              "a": 15,
+              "b": 5,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 9
+              },
+              {
+                "number": 20
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 15
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "5-3-q4",
+            "type": "subtraction",
+            "data": {
+              "a": 11,
+              "b": 8,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "faded",
+              "animal": "sheep",
+              "count": 11,
+              "faded": 8
+            },
+            "answers": [
+              {
+                "number": 19
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 3
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "5-3-q5",
+            "type": "subtraction",
+            "data": {
+              "a": 11,
+              "b": 3,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "faded",
+              "animal": "sheep",
+              "count": 11,
+              "faded": 3
+            },
+            "answers": [
+              {
+                "number": 11
+              },
+              {
+                "number": 14
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 10
+              }
+            ],
+            "correctIndex": 2
+          }
+        ]
+      },
+      {
+        "id": "5-4",
+        "chapter": 5,
+        "index": 4,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "5-4-q1",
+            "type": "subtraction",
+            "data": {
+              "a": 18,
+              "b": 7,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 10
+              },
+              {
+                "number": 11
+              },
+              {
+                "number": 13
+              },
+              {
+                "number": 12
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "5-4-q2",
+            "type": "subtraction",
+            "data": {
+              "a": 20,
+              "b": 3,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 20
+              },
+              {
+                "number": 16
+              },
+              {
+                "number": 18
+              },
+              {
+                "number": 17
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "5-4-q3",
+            "type": "subtraction",
+            "data": {
+              "a": 13,
+              "b": 12,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 12
+              },
+              {
+                "number": 1
+              },
+              {
+                "number": 13
+              },
+              {
+                "number": 2
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "5-4-q4",
+            "type": "subtraction",
+            "data": {
+              "a": 13,
+              "b": 6,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 9
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 13
+              },
+              {
+                "number": 6
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "5-4-q5",
+            "type": "subtraction",
+            "data": {
+              "a": 15,
+              "b": 5,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 15
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 20
+              }
+            ],
+            "correctIndex": 2
+          }
+        ]
+      },
+      {
+        "id": "5-5",
+        "chapter": 5,
+        "index": 5,
+        "timerEnabled": true,
+        "timerSeconds": 15,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "5-5-q1",
+            "type": "addition",
+            "data": {
+              "a": 8,
+              "b": 10,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 17
+              },
+              {
+                "number": 19
+              },
+              {
+                "number": 18
+              },
+              {
+                "number": 8
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "5-5-q2",
+            "type": "subtraction",
+            "data": {
+              "a": 8,
+              "b": 2,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "faded",
+              "animal": "sheep",
+              "count": 8,
+              "faded": 2
+            },
+            "answers": [
+              {
+                "number": 6
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 5
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "5-5-q3",
+            "type": "addition",
+            "data": {
+              "a": 10,
+              "b": 5,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 13
+              },
+              {
+                "number": 15
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 16
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "5-5-q4",
+            "type": "subtraction",
+            "data": {
+              "a": 12,
+              "b": 10,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "faded",
+              "animal": "sheep",
+              "count": 12,
+              "faded": 10
+            },
+            "answers": [
+              {
+                "number": 2
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 12
+              },
+              {
+                "number": 4
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "5-5-q5",
+            "type": "addition",
+            "data": {
+              "a": 10,
+              "b": 6,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 6
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 16
+              },
+              {
+                "number": 17
+              }
+            ],
+            "correctIndex": 2
+          }
+        ]
+      },
+      {
+        "id": "5-6",
+        "chapter": 5,
+        "index": 6,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "5-6-q1",
+            "type": "addition",
+            "data": {
+              "a": 7,
+              "b": 9,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 17
+              },
+              {
+                "number": 18
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 16
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "5-6-q2",
+            "type": "subtraction",
+            "data": {
+              "a": 12,
+              "b": 2,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "faded",
+              "animal": "sheep",
+              "count": 12,
+              "faded": 2
+            },
+            "answers": [
+              {
+                "number": 12
+              },
+              {
+                "number": 14
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 2
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "5-6-q3",
+            "type": "addition",
+            "data": {
+              "a": 10,
+              "b": 8,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 16
+              },
+              {
+                "number": 18
+              },
+              {
+                "number": 17
+              },
+              {
+                "number": 8
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "5-6-q4",
+            "type": "subtraction",
+            "data": {
+              "a": 14,
+              "b": 1,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 1
+              },
+              {
+                "number": 15
+              },
+              {
+                "number": 13
+              },
+              {
+                "number": 14
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "5-6-q5",
+            "type": "comparison",
+            "data": {
+              "mode": "biggest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 12
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 17
+              },
+              {
+                "number": 20
+              }
+            ],
+            "correctIndex": 3
+          }
+        ]
+      }
+    ]
+  }
+}

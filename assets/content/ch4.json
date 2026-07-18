@@ -1,0 +1,902 @@
+{
+  "schemaVersion": 1,
+  "chapter": {
+    "id": 4,
+    "levels": [
+      {
+        "id": "4-1",
+        "chapter": 4,
+        "index": 1,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "4-1-q1",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                12,
+                13,
+                14
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 17
+              },
+              {
+                "number": 15
+              },
+              {
+                "number": 16
+              },
+              {
+                "number": 13
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "4-1-q2",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                13,
+                14,
+                15
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 17
+              },
+              {
+                "number": 16
+              },
+              {
+                "number": 14
+              },
+              {
+                "number": 15
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "4-1-q3",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                8,
+                10,
+                12
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 16
+              },
+              {
+                "number": 15
+              },
+              {
+                "number": 12
+              },
+              {
+                "number": 14
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "4-1-q4",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                12,
+                14,
+                16
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 18
+              },
+              {
+                "number": 16
+              },
+              {
+                "number": 19
+              },
+              {
+                "number": 20
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "4-1-q5",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                14,
+                16,
+                18
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 18
+              },
+              {
+                "number": 20
+              },
+              {
+                "number": 17
+              },
+              {
+                "number": 19
+              }
+            ],
+            "correctIndex": 1
+          }
+        ]
+      },
+      {
+        "id": "4-2",
+        "chapter": 4,
+        "index": 2,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "4-2-q1",
+            "type": "comparison",
+            "data": {
+              "mode": "biggest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 12
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 15
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "4-2-q2",
+            "type": "comparison",
+            "data": {
+              "mode": "smallest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 9
+              },
+              {
+                "number": 17
+              },
+              {
+                "number": 15
+              },
+              {
+                "number": 18
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "4-2-q3",
+            "type": "comparison",
+            "data": {
+              "mode": "biggest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 8
+              },
+              {
+                "number": 13
+              },
+              {
+                "number": 6
+              },
+              {
+                "number": 11
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "4-2-q4",
+            "type": "comparison",
+            "data": {
+              "mode": "smallest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 10
+              },
+              {
+                "number": 13
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 14
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "4-2-q5",
+            "type": "comparison",
+            "data": {
+              "mode": "biggest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 15
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 12
+              }
+            ],
+            "correctIndex": 0
+          }
+        ]
+      },
+      {
+        "id": "4-3",
+        "chapter": 4,
+        "index": 3,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "4-3-q1",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                12,
+                14,
+                16
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 20
+              },
+              {
+                "number": 18
+              },
+              {
+                "number": 17
+              },
+              {
+                "number": 19
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "4-3-q2",
+            "type": "comparison",
+            "data": {
+              "mode": "biggest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 15
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 18
+              },
+              {
+                "number": 12
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "4-3-q3",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                12,
+                13,
+                14
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 16
+              },
+              {
+                "number": 14
+              },
+              {
+                "number": 15
+              },
+              {
+                "number": 17
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "4-3-q4",
+            "type": "comparison",
+            "data": {
+              "mode": "smallest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 8
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 13
+              },
+              {
+                "number": 7
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "4-3-q5",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                16,
+                17,
+                18
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 17
+              },
+              {
+                "number": 19
+              },
+              {
+                "number": 20
+              },
+              {
+                "number": 18
+              }
+            ],
+            "correctIndex": 1
+          }
+        ]
+      },
+      {
+        "id": "4-4",
+        "chapter": 4,
+        "index": 4,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "4-4-q1",
+            "type": "addition",
+            "data": {
+              "a": 4,
+              "b": 7,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                4,
+                7
+              ]
+            },
+            "answers": [
+              {
+                "number": 13
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 11
+              },
+              {
+                "number": 9
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "4-4-q2",
+            "type": "addition",
+            "data": {
+              "a": 7,
+              "b": 7,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 7
+              },
+              {
+                "number": 15
+              },
+              {
+                "number": 14
+              },
+              {
+                "number": 13
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "4-4-q3",
+            "type": "addition",
+            "data": {
+              "a": 8,
+              "b": 2,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                8,
+                2
+              ]
+            },
+            "answers": [
+              {
+                "number": 2
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 8
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "4-4-q4",
+            "type": "addition",
+            "data": {
+              "a": 6,
+              "b": 7,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 15
+              },
+              {
+                "number": 12
+              },
+              {
+                "number": 6
+              },
+              {
+                "number": 13
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "4-4-q5",
+            "type": "addition",
+            "data": {
+              "a": 2,
+              "b": 10,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                2,
+                10
+              ]
+            },
+            "answers": [
+              {
+                "number": 12
+              },
+              {
+                "number": 11
+              },
+              {
+                "number": 2
+              },
+              {
+                "number": 14
+              }
+            ],
+            "correctIndex": 0
+          }
+        ]
+      },
+      {
+        "id": "4-5",
+        "chapter": 4,
+        "index": 5,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "4-5-q1",
+            "type": "addition",
+            "data": {
+              "a": 6,
+              "b": 4,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                6,
+                4
+              ]
+            },
+            "answers": [
+              {
+                "number": 11
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 8
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "4-5-q2",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                15,
+                16,
+                17
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 19
+              },
+              {
+                "number": 18
+              },
+              {
+                "number": 17
+              },
+              {
+                "number": 16
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "4-5-q3",
+            "type": "addition",
+            "data": {
+              "a": 4,
+              "b": 10,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 13
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 14
+              },
+              {
+                "number": 16
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "4-5-q4",
+            "type": "comparison",
+            "data": {
+              "mode": "biggest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 12
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 13
+              },
+              {
+                "number": 11
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "4-5-q5",
+            "type": "addition",
+            "data": {
+              "a": 5,
+              "b": 9,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 15
+              },
+              {
+                "number": 16
+              },
+              {
+                "number": 14
+              },
+              {
+                "number": 13
+              }
+            ],
+            "correctIndex": 2
+          }
+        ]
+      },
+      {
+        "id": "4-6",
+        "chapter": 4,
+        "index": 6,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "4-6-q1",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                12,
+                13,
+                14
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 15
+              },
+              {
+                "number": 13
+              },
+              {
+                "number": 16
+              },
+              {
+                "number": 17
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "4-6-q2",
+            "type": "addition",
+            "data": {
+              "a": 6,
+              "b": 9,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 15
+              },
+              {
+                "number": 14
+              },
+              {
+                "number": 6
+              },
+              {
+                "number": 16
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "4-6-q3",
+            "type": "comparison",
+            "data": {
+              "mode": "biggest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 9
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 14
+              },
+              {
+                "number": 13
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "4-6-q4",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                9,
+                11,
+                13
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 17
+              },
+              {
+                "number": 13
+              },
+              {
+                "number": 15
+              },
+              {
+                "number": 16
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "4-6-q5",
+            "type": "addition",
+            "data": {
+              "a": 8,
+              "b": 8,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 16
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 17
+              },
+              {
+                "number": 18
+              }
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    ]
+  }
+}

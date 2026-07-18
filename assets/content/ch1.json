@@ -1,0 +1,941 @@
+{
+  "schemaVersion": 1,
+  "chapter": {
+    "id": 1,
+    "levels": [
+      {
+        "id": "1-1",
+        "chapter": 1,
+        "index": 1,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "1-1-q1",
+            "type": "counting",
+            "data": {
+              "animal": "chick"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "chick",
+              "count": 2
+            },
+            "answers": [
+              {
+                "number": 2
+              },
+              {
+                "number": 3
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 5
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "1-1-q2",
+            "type": "counting",
+            "data": {
+              "animal": "sheep"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "sheep",
+              "count": 3
+            },
+            "answers": [
+              {
+                "number": 2
+              },
+              {
+                "number": 3
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 5
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "1-1-q3",
+            "type": "counting",
+            "data": {
+              "animal": "pig"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "pig",
+              "count": 3
+            },
+            "answers": [
+              {
+                "number": 3
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 6
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "1-1-q4",
+            "type": "counting",
+            "data": {
+              "animal": "chick"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "chick",
+              "count": 3
+            },
+            "answers": [
+              {
+                "number": 3
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 6
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "1-1-q5",
+            "type": "counting",
+            "data": {
+              "animal": "chick"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "chick",
+              "count": 3
+            },
+            "answers": [
+              {
+                "number": 1
+              },
+              {
+                "number": 2
+              },
+              {
+                "number": 3
+              },
+              {
+                "number": 4
+              }
+            ],
+            "correctIndex": 2
+          }
+        ]
+      },
+      {
+        "id": "1-2",
+        "chapter": 1,
+        "index": 2,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "1-2-q1",
+            "type": "counting",
+            "data": {
+              "animal": "chick"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "chick",
+              "count": 7
+            },
+            "answers": [
+              {
+                "number": 6
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 9
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "1-2-q2",
+            "type": "counting",
+            "data": {
+              "animal": "sheep"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "sheep",
+              "count": 4
+            },
+            "answers": [
+              {
+                "number": 2
+              },
+              {
+                "number": 3
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 5
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "1-2-q3",
+            "type": "counting",
+            "data": {
+              "animal": "pig"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "pig",
+              "count": 8
+            },
+            "answers": [
+              {
+                "number": 7
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 10
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "1-2-q4",
+            "type": "counting",
+            "data": {
+              "animal": "chick"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "chick",
+              "count": 10
+            },
+            "answers": [
+              {
+                "number": 10
+              },
+              {
+                "number": 11
+              },
+              {
+                "number": 12
+              },
+              {
+                "number": 13
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "1-2-q5",
+            "type": "counting",
+            "data": {
+              "animal": "sheep"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "sheep",
+              "count": 6
+            },
+            "answers": [
+              {
+                "number": 4
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 6
+              },
+              {
+                "number": 7
+              }
+            ],
+            "correctIndex": 2
+          }
+        ]
+      },
+      {
+        "id": "1-3",
+        "chapter": 1,
+        "index": 3,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": false,
+        "questions": [
+          {
+            "id": "1-3-q1",
+            "type": "counting",
+            "data": {
+              "animal": "chick"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "chick",
+              "count": 4
+            },
+            "answers": [
+              {
+                "number": 3
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 6
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "1-3-q2",
+            "type": "addition",
+            "data": {
+              "a": 3,
+              "b": 2,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                3,
+                2
+              ]
+            },
+            "answers": [
+              {
+                "number": 4
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 6
+              },
+              {
+                "number": 3
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "1-3-q3",
+            "type": "shapes",
+            "data": {
+              "target": "triangle"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "shape": "triangle"
+              },
+              {
+                "shape": "circle"
+              },
+              {
+                "shape": "square"
+              },
+              {
+                "shape": "diamond"
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "1-3-q4",
+            "type": "subtraction",
+            "data": {
+              "a": 5,
+              "b": 2,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "faded",
+              "animal": "sheep",
+              "count": 5,
+              "faded": 2
+            },
+            "answers": [
+              {
+                "number": 2
+              },
+              {
+                "number": 3
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 6
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "1-3-q5",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                2,
+                4,
+                6
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 7
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 9
+              }
+            ],
+            "correctIndex": 1
+          }
+        ]
+      },
+      {
+        "id": "1-4",
+        "chapter": 1,
+        "index": 4,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "1-4-q1",
+            "type": "addition",
+            "data": {
+              "a": 4,
+              "b": 6,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                4,
+                6
+              ]
+            },
+            "answers": [
+              {
+                "number": 8
+              },
+              {
+                "number": 11
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 6
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "1-4-q2",
+            "type": "addition",
+            "data": {
+              "a": 8,
+              "b": 1,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                8,
+                1
+              ]
+            },
+            "answers": [
+              {
+                "number": 7
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 10
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "1-4-q3",
+            "type": "addition",
+            "data": {
+              "a": 4,
+              "b": 3,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                4,
+                3
+              ]
+            },
+            "answers": [
+              {
+                "number": 6
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 5
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "1-4-q4",
+            "type": "addition",
+            "data": {
+              "a": 4,
+              "b": 5,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                4,
+                5
+              ]
+            },
+            "answers": [
+              {
+                "number": 9
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 4
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "1-4-q5",
+            "type": "addition",
+            "data": {
+              "a": 3,
+              "b": 4,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                3,
+                4
+              ]
+            },
+            "answers": [
+              {
+                "number": 9
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 3
+              }
+            ],
+            "correctIndex": 1
+          }
+        ]
+      },
+      {
+        "id": "1-5",
+        "chapter": 1,
+        "index": 5,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "1-5-q1",
+            "type": "counting",
+            "data": {
+              "animal": "chick"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "chick",
+              "count": 3
+            },
+            "answers": [
+              {
+                "number": 2
+              },
+              {
+                "number": 3
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 5
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "1-5-q2",
+            "type": "addition",
+            "data": {
+              "a": 1,
+              "b": 9,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                1,
+                9
+              ]
+            },
+            "answers": [
+              {
+                "number": 10
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 1
+              },
+              {
+                "number": 11
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "1-5-q3",
+            "type": "counting",
+            "data": {
+              "animal": "sheep"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "sheep",
+              "count": 6
+            },
+            "answers": [
+              {
+                "number": 3
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 6
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "1-5-q4",
+            "type": "addition",
+            "data": {
+              "a": 3,
+              "b": 4,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                3,
+                4
+              ]
+            },
+            "answers": [
+              {
+                "number": 3
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 6
+              },
+              {
+                "number": 8
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "1-5-q5",
+            "type": "addition",
+            "data": {
+              "a": 1,
+              "b": 1,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                1,
+                1
+              ]
+            },
+            "answers": [
+              {
+                "number": 2
+              },
+              {
+                "number": 0
+              },
+              {
+                "number": 1
+              },
+              {
+                "number": 4
+              }
+            ],
+            "correctIndex": 0
+          }
+        ]
+      },
+      {
+        "id": "1-6",
+        "chapter": 1,
+        "index": 6,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "1-6-q1",
+            "type": "counting",
+            "data": {
+              "animal": "pig"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "pig",
+              "count": 12
+            },
+            "answers": [
+              {
+                "number": 9
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 11
+              },
+              {
+                "number": 12
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "1-6-q2",
+            "type": "addition",
+            "data": {
+              "a": 4,
+              "b": 7,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                4,
+                7
+              ]
+            },
+            "answers": [
+              {
+                "number": 11
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 12
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "1-6-q3",
+            "type": "addition",
+            "data": {
+              "a": 7,
+              "b": 1,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                7,
+                1
+              ]
+            },
+            "answers": [
+              {
+                "number": 8
+              },
+              {
+                "number": 1
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 6
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "1-6-q4",
+            "type": "counting",
+            "data": {
+              "animal": "chick"
+            },
+            "visual": {
+              "kind": "count",
+              "animal": "chick",
+              "count": 9
+            },
+            "answers": [
+              {
+                "number": 6
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 9
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "1-6-q5",
+            "type": "addition",
+            "data": {
+              "a": 5,
+              "b": 4,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "grouped",
+              "animal": "pig",
+              "groups": [
+                5,
+                4
+              ]
+            },
+            "answers": [
+              {
+                "number": 9
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 11
+              }
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    ]
+  }
+}

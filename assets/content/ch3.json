@@ -1,0 +1,864 @@
+{
+  "schemaVersion": 1,
+  "chapter": {
+    "id": 3,
+    "levels": [
+      {
+        "id": "3-1",
+        "chapter": 3,
+        "index": 1,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "3-1-q1",
+            "type": "shapes",
+            "data": {
+              "target": "triangle"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "shape": "diamond"
+              },
+              {
+                "shape": "square"
+              },
+              {
+                "shape": "circle"
+              },
+              {
+                "shape": "triangle"
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "3-1-q2",
+            "type": "shapes",
+            "data": {
+              "target": "circle"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "shape": "triangle"
+              },
+              {
+                "shape": "diamond"
+              },
+              {
+                "shape": "circle"
+              },
+              {
+                "shape": "square"
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "3-1-q3",
+            "type": "shapes",
+            "data": {
+              "target": "square"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "shape": "triangle"
+              },
+              {
+                "shape": "square"
+              },
+              {
+                "shape": "circle"
+              },
+              {
+                "shape": "diamond"
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "3-1-q4",
+            "type": "shapes",
+            "data": {
+              "target": "triangle"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "shape": "diamond"
+              },
+              {
+                "shape": "triangle"
+              },
+              {
+                "shape": "square"
+              },
+              {
+                "shape": "circle"
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "3-1-q5",
+            "type": "shapes",
+            "data": {
+              "target": "circle"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "shape": "circle"
+              },
+              {
+                "shape": "triangle"
+              },
+              {
+                "shape": "square"
+              },
+              {
+                "shape": "diamond"
+              }
+            ],
+            "correctIndex": 0
+          }
+        ]
+      },
+      {
+        "id": "3-2",
+        "chapter": 3,
+        "index": 2,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "3-2-q1",
+            "type": "shapes",
+            "data": {
+              "target": "diamond"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "shape": "square"
+              },
+              {
+                "shape": "circle"
+              },
+              {
+                "shape": "diamond"
+              },
+              {
+                "shape": "triangle"
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "3-2-q2",
+            "type": "shapes",
+            "data": {
+              "target": "triangle"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "shape": "triangle"
+              },
+              {
+                "shape": "diamond"
+              },
+              {
+                "shape": "square"
+              },
+              {
+                "shape": "circle"
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "3-2-q3",
+            "type": "shapes",
+            "data": {
+              "target": "diamond"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "shape": "triangle"
+              },
+              {
+                "shape": "square"
+              },
+              {
+                "shape": "diamond"
+              },
+              {
+                "shape": "circle"
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "3-2-q4",
+            "type": "shapes",
+            "data": {
+              "target": "square"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "shape": "circle"
+              },
+              {
+                "shape": "triangle"
+              },
+              {
+                "shape": "square"
+              },
+              {
+                "shape": "diamond"
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "3-2-q5",
+            "type": "shapes",
+            "data": {
+              "target": "diamond"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "shape": "diamond"
+              },
+              {
+                "shape": "triangle"
+              },
+              {
+                "shape": "square"
+              },
+              {
+                "shape": "circle"
+              }
+            ],
+            "correctIndex": 0
+          }
+        ]
+      },
+      {
+        "id": "3-3",
+        "chapter": 3,
+        "index": 3,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "3-3-q1",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                3,
+                4,
+                5
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 4
+              },
+              {
+                "number": 6
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 5
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "3-3-q2",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                4,
+                6,
+                8
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 8
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 11
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "3-3-q3",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                5,
+                10,
+                15
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 20
+              },
+              {
+                "number": 18
+              },
+              {
+                "number": 16
+              },
+              {
+                "number": 19
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "3-3-q4",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                10,
+                9,
+                8
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 9
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 7
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "3-3-q5",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                6,
+                8,
+                10
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 13
+              },
+              {
+                "number": 12
+              },
+              {
+                "number": 10
+              },
+              {
+                "number": 14
+              }
+            ],
+            "correctIndex": 1
+          }
+        ]
+      },
+      {
+        "id": "3-4",
+        "chapter": 3,
+        "index": 4,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "3-4-q1",
+            "type": "addition",
+            "data": {
+              "a": 7,
+              "b": 4,
+              "missing": "b",
+              "c": 11
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 2
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 6
+              },
+              {
+                "number": 11
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "3-4-q2",
+            "type": "subtraction",
+            "data": {
+              "a": 13,
+              "b": 5,
+              "missing": "b",
+              "c": 8
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 4
+              },
+              {
+                "number": 6
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 3
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "3-4-q3",
+            "type": "addition",
+            "data": {
+              "a": 6,
+              "b": 7,
+              "missing": "b",
+              "c": 13
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 7
+              },
+              {
+                "number": 6
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 5
+              }
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "3-4-q4",
+            "type": "subtraction",
+            "data": {
+              "a": 6,
+              "b": 4,
+              "missing": "b",
+              "c": 2
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 6
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 2
+              },
+              {
+                "number": 4
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "3-4-q5",
+            "type": "addition",
+            "data": {
+              "a": 2,
+              "b": 5,
+              "missing": "b",
+              "c": 7
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 5
+              },
+              {
+                "number": 6
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 2
+              }
+            ],
+            "correctIndex": 0
+          }
+        ]
+      },
+      {
+        "id": "3-5",
+        "chapter": 3,
+        "index": 5,
+        "timerEnabled": false,
+        "timerSeconds": 0,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "3-5-q1",
+            "type": "comparison",
+            "data": {
+              "mode": "biggest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 16
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 17
+              },
+              {
+                "number": 18
+              }
+            ],
+            "correctIndex": 3
+          },
+          {
+            "id": "3-5-q2",
+            "type": "comparison",
+            "data": {
+              "mode": "smallest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 14
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 12
+              },
+              {
+                "number": 10
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "3-5-q3",
+            "type": "comparison",
+            "data": {
+              "mode": "biggest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 15
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 17
+              },
+              {
+                "number": 7
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "3-5-q4",
+            "type": "comparison",
+            "data": {
+              "mode": "smallest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 13
+              },
+              {
+                "number": 12
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 7
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "3-5-q5",
+            "type": "comparison",
+            "data": {
+              "mode": "biggest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 12
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 9
+              },
+              {
+                "number": 11
+              }
+            ],
+            "correctIndex": 0
+          }
+        ]
+      },
+      {
+        "id": "3-6",
+        "chapter": 3,
+        "index": 6,
+        "timerEnabled": true,
+        "timerSeconds": 10,
+        "shuffleAnswers": true,
+        "questions": [
+          {
+            "id": "3-6-q1",
+            "type": "addition",
+            "data": {
+              "a": 12,
+              "b": 5,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 19
+              },
+              {
+                "number": 17
+              },
+              {
+                "number": 18
+              },
+              {
+                "number": 12
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "3-6-q2",
+            "type": "subtraction",
+            "data": {
+              "a": 12,
+              "b": 4,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "faded",
+              "animal": "sheep",
+              "count": 12,
+              "faded": 4
+            },
+            "answers": [
+              {
+                "number": 16
+              },
+              {
+                "number": 4
+              },
+              {
+                "number": 8
+              },
+              {
+                "number": 7
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "3-6-q3",
+            "type": "sequence",
+            "data": {
+              "terms": [
+                10,
+                12,
+                14
+              ]
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 17
+              },
+              {
+                "number": 16
+              },
+              {
+                "number": 15
+              },
+              {
+                "number": 14
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "3-6-q4",
+            "type": "comparison",
+            "data": {
+              "mode": "biggest"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "number": 7
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 15
+              },
+              {
+                "number": 9
+              }
+            ],
+            "correctIndex": 2
+          },
+          {
+            "id": "3-6-q5",
+            "type": "shapes",
+            "data": {
+              "target": "circle"
+            },
+            "visual": {
+              "kind": "none"
+            },
+            "answers": [
+              {
+                "shape": "diamond"
+              },
+              {
+                "shape": "circle"
+              },
+              {
+                "shape": "square"
+              },
+              {
+                "shape": "triangle"
+              }
+            ],
+            "correctIndex": 1
+          }
+        ]
+      }
+    ]
+  }
+}
