@@ -1,0 +1,103 @@
+========================================================================
+BILIMDON — GOOGLE PLAY MATNLARI (en / uz / ru)
+Qisqa, sodda, ota-ona uchun. Play siyosati: YouTube / Instagram / TikTok
+nomlarini YOZMANG — "qisqa videolar / cheksiz scrolling" deb umumiy yozamiz.
+========================================================================
+
+
+########################################################################
+1) RELEASE NOTES  (skrinshotdagi maydon — "nima yangi")
+   Play faqat qo'shilgan tillar uchun qabul qiladi. Hozir en-US yetadi.
+########################################################################
+
+--- Paste (en-US) ---
+<en-US>
+Welcome to Bilimdon — our first version! A friendly farm adventure that
+turns math into play for kids aged 4-8: counting, addition, subtraction
+and multiplication across 6 chapters and 36 levels. Fully offline, no
+ads, no internet, and no data collected.
+</en-US>
+
+--- uz (agar o'zbek tilini qo'shsangiz) ---
+Bilimdon'ning birinchi versiyasi! 4-8 yosh uchun matematikani o'yinga
+aylantiradigan mehribon ferma sarguzashti: sanash, qo'shish, ayirish va
+ko'paytirish - 6 bob, 36 daraja. To'liq internetsiz, reklamasiz.
+
+--- ru (agar rus tilini qo'shsangiz) ---
+Первая версия Bilimdon! Добрая фермерская игра, которая превращает
+математику в удовольствие для детей 4-8 лет: счёт, сложение, вычитание и
+умножение - 6 глав, 36 уровней. Полностью офлайн, без рекламы.
+
+
+########################################################################
+2) SHORT DESCRIPTION  (Store listing, ≤ 80 belgi)
+########################################################################
+
+en: Fun offline math game for kids 4-8: counting, logic, no ads.
+uz: 4-8 yosh matematika o'yini: sanash va mantiq. Internetsiz, reklamasiz.
+ru: Математика для детей 4-8: счёт и логика. Офлайн, без рекламы.
+
+
+########################################################################
+3) FULL DESCRIPTION  (Store listing, ≤ 4000 belgi)
+########################################################################
+
+--- en-US ---
+Bilimdon - a joyful way for kids to fall in love with math.
+
+Instead of passive scrolling and endless short videos, give your child
+screen time that actually teaches. Bilimdon turns counting, addition,
+subtraction and multiplication into a friendly farm adventure for ages
+4-8 - so every minute helps them think and grow.
+
+Why parents love Bilimdon:
+🧠 Builds logical thinking and real math skills, step by step
+🚜 A cute farm world with animals, levels and rewards
+🎯 6 chapters, 36 levels - from counting 1-5 to multiplication
+🔒 100% kid-safe: no ads, no internet, no data collected, no purchases
+📴 Works fully offline - play anywhere, anytime
+🌍 3 languages: Uzbek, Russian, English
+
+Short, simple and made for little hands. A few minutes a day helps your
+child count, reason and grow - screen time you can feel good about.
+
+
+--- uz ---
+Bilimdon - bolangiz matematikani sevib o'rganadigan quvnoq o'yin.
+
+Foydasiz cheksiz "scrolling" va qisqa videolar o'rniga farzandingizga
+haqiqatan o'rgatadigan ekran vaqtini bering. Bilimdon sanash, qo'shish,
+ayirish va ko'paytirishni 4-8 yoshli bolalar uchun mehribon ferma
+sarguzashtiga aylantiradi - har daqiqa bola o'ylashiga yordam beradi.
+
+Ota-onalar nega yoqtiradi:
+🧠 Mantiqiy fikrlash va matematikani bosqichma-bosqich o'rgatadi
+🚜 Hayvonlar, darajalar va sovg'alarga to'la yoqimli ferma dunyosi
+🎯 6 bob, 36 daraja - 1-5 sanashdan ko'paytirishgacha
+🔒 100% xavfsiz: reklama yo'q, internet yo'q, ma'lumot yig'ilmaydi, xarid yo'q
+📴 To'liq internetsiz ishlaydi - istalgan joyda
+🌍 3 til: o'zbek, rus, ingliz
+
+Qisqa, sodda va kichkintoylar uchun. Kuniga bir necha daqiqa - bolangiz
+o'ylaydi, sanaydi va o'sadi.
+
+
+--- ru ---
+Bilimdon - весёлая игра, с которой ребёнок полюбит математику.
+
+Вместо бесконечной ленты коротких видео подарите ребёнку экранное время,
+которое действительно учит. Bilimdon превращает счёт, сложение,
+вычитание и умножение в добрую фермерскую историю для детей 4-8 лет - и
+каждая минута помогает малышу думать и расти.
+
+За что любят родители:
+🧠 Развивает логическое мышление и настоящие навыки счёта
+🚜 Милый мир фермы с животными, уровнями и наградами
+🎯 6 глав, 36 уровней - от счёта 1-5 до умножения
+🔒 100% безопасно: без рекламы, без интернета, без сбора данных, без покупок
+📴 Работает полностью офлайн - играйте где угодно
+🌍 3 языка: узбекский, русский, английский
+
+Коротко, просто и создано для маленьких рук. Несколько минут в день -
+ребёнок думает, считает и растёт.
+========================================================================

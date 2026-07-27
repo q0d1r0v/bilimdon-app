@@ -114,6 +114,74 @@ void main() {
       pixelRatio: 2,
       name: 'splash_preview.png',
     );
+    // 6) Play do'kon FEATURE grafikasi (MAJBURIY, aynan 1024x500).
+    await shoot(
+      child: DecoratedBox(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              BrandPalette.skyTop,
+              BrandPalette.skyMid,
+              BrandPalette.skyLow,
+            ],
+            stops: [0, .5, 1],
+          ),
+        ),
+        child: Stack(
+          children: [
+            const Positioned(left: 44, top: 40, child: BrandSun(size: 96)),
+            const Positioned(
+              right: 90,
+              top: 54,
+              child: BrandCloud(width: 96, height: 36),
+            ),
+            const Positioned(
+              right: 330,
+              top: 120,
+              child: BrandCloud(width: 64, height: 24, opacity: .9),
+            ),
+            const Positioned(
+              left: 150,
+              top: 116,
+              child: BrandCloud(width: 52, height: 20, opacity: .85),
+            ),
+            Align(
+              alignment: const Alignment(0, -0.22),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const BrandEquation(tileSize: 92),
+                  const SizedBox(height: 18),
+                  const Text(
+                    'Bilimdon',
+                    style: TextStyle(
+                      fontFamily: 'Fredoka',
+                      fontSize: 80,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                      letterSpacing: 1,
+                      height: 1,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: BrandGrass(height: 120),
+            ),
+          ],
+        ),
+      ),
+      width: 1024,
+      height: 500,
+      pixelRatio: 1,
+      name: 'feature_graphic.png',
+    );
 
     for (final f in [
       'icon_full.png',
@@ -121,6 +189,7 @@ void main() {
       'icon_foreground.png',
       'splash_mark.png',
       'splash_preview.png',
+      'feature_graphic.png',
     ]) {
       expect(File('$outDir/$f').existsSync(), isTrue, reason: f);
     }
