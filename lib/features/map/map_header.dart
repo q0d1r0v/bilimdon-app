@@ -27,35 +27,47 @@ class MapHeader extends StatelessWidget {
             children: [
               _Avatar(avatar: store.avatar),
               const SizedBox(width: 10),
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    store.playerName,
-                    style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                      shadows: [
-                        Shadow(
-                          offset: Offset(0, 1),
-                          blurRadius: 2,
-                          color: Color.fromRGBO(20, 60, 110, .35),
-                        ),
-                      ],
+              // Expanded + ellipsis: uzun ism yoki 4 xonali tanga hisobi
+              // pill'larni ekrandan chiqarib yubormasligi kerak. `Spacer()`
+              // O'RNIGA Expanded — u bo'sh joyni o'zi yutadi, lekin kerak
+              // bo'lganda siqiladi ham (uslub: profile_screen.dart:69).
+              Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      store.playerName.isEmpty
+                          ? l10n.playerDefaultName
+                          : store.playerName,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                        shadows: [
+                          Shadow(
+                            offset: Offset(0, 1),
+                            blurRadius: 2,
+                            color: Color.fromRGBO(20, 60, 110, .35),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Text(
-                    l10n.levelBadge(store.displayLevel),
-                    style: const TextStyle(
-                      fontSize: 11,
-                      color: FarmColors.headerSub,
+                    Text(
+                      l10n.levelBadge(store.displayLevel),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 11,
+                        color: FarmColors.headerSub,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              const Spacer(),
+              const SizedBox(width: 8),
               StatPill(
                 children: [
                   const StreakFlameIcon(size: 13),

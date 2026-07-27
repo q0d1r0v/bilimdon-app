@@ -57,7 +57,10 @@ abstract final class FarmColors {
   static const inkOlive = Color(0xFF6E7F5A);
   static const inkGray = Color(0xFF8A8266);
   static const inkFaded = Color(0xFF9A9070);
-  static const navInactive = Color(0xFFA8B894);
+  // Nofaol nav yozuvi: prototipdagi #A8B894 cream fonda faqat 2.07:1 berardi
+  // (WCAG minimumi oddiy matn uchun 4.5:1). inkOlive — 4.26:1 va bir xil
+  // zaytun-yashil oilada qoladi, ya'ni dizayn tili buzilmaydi.
+  static const navInactive = inkOlive;
   static const navInactiveLight = Color(0xFFC4CFB4);
   static const headerSub = Color(0xFFE3F3FF);
   static const bannerSub = Color(0xFFFFD9CF);
@@ -99,6 +102,30 @@ abstract final class FarmColors {
   static const barnRoof = Color(0xFFE3B778);
   static const barnWall = Color(0xFFFFF6DE);
   static const barnDoor = Color(0xFFC22F2C);
+
+  /// Javob tugmasi ustidagi raqam/shakl rangi.
+  ///
+  /// Bitta rang HAMMA tugmaga yaramaydi — o'lchangan WCAG nisbatlari:
+  ///
+  /// | tugma | oq | inkDark |
+  /// |---|---|---|
+  /// | `red` #E8433F | **3.96** | 3.10 |
+  /// | `mud` #B0654A | **4.37** | 2.81 ✗ |
+  /// | `blue` #3D9BE9 | 2.97 ✗ | **4.13** |
+  /// | `green` #58B94A | 2.48 ✗ | **4.94** |
+  /// | `yellow` #FFC23C | 1.61 ✗✗ | **7.62** |
+  ///
+  /// Ya'ni oq matn sariq tugmada 1.61:1 — 28px qalin raqam bo'lsa ham
+  /// o'qilmaydi (katta matn uchun WCAG minimumi 3.0:1). Shuning uchun matn
+  /// rangi fon yorqinligiga qarab tanlanadi va har holatda 3.0 dan yuqori
+  /// bo'ladi. Tugma ranglari (DESIGN_SPEC palitrasi) O'ZGARMAYDI.
+  static Color answerForeground(Color background) =>
+      background.computeLuminance() >= _answerFgThreshold
+          ? inkDark
+          : Colors.white;
+
+  /// `blue` (0.304) va `red` (0.215) yorqinliklari orasidagi chegara.
+  static const _answerFgThreshold = 0.26;
 }
 
 abstract final class FarmSpacing {

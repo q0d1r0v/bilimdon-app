@@ -81,12 +81,16 @@ class _MathFarmAppState extends State<MathFarmApp>
           localeListResolutionCallback: (device, supported) =>
               MathFarmApp.resolveLocale(override, device, supported),
           builder: (context, child) {
-            // Matn — dizaynning bir qismi: tizim shrift masshtabi art'ni
-            // buzmasligi uchun 1.0 ga qotiriladi (bolalar planshetlarida
-            // masshtab har xil bo'ladi).
+            // Matn — dizaynning bir qismi, lekin tizim shrift masshtabini
+            // BUTUNLAY o'chirish WCAG 1.4.4 (Resize Text) ni buzardi.
+            // Shuning uchun clamp: 1.0-1.3 oralig'ida art buzilmaydi
+            // (MapHeader `Expanded`+ellipsis bilan tuzatilgandan keyin
+            // o'lchab tasdiqlangan), 1.3 dan yuqorisi kesiladi.
+            final system = MediaQuery.textScalerOf(context).scale(1);
             return MediaQuery(
-              data: MediaQuery.of(context)
-                  .copyWith(textScaler: TextScaler.noScaling),
+              data: MediaQuery.of(context).copyWith(
+                textScaler: TextScaler.linear(system.clamp(1.0, 1.3)),
+              ),
               child: child!,
             );
           },

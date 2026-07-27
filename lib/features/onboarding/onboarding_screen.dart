@@ -46,13 +46,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     setState(() => _step = 1);
   }
 
-  bool get _canFinish => _nameCtrl.text.trim().isNotEmpty && _age != null;
+  // Ism ATAYLAB majburiy EMAS: 4 yoshli bola klaviaturada ism yozib
+  // o'tolmaydi va birinchi seansda ilovani tashlab ketardi. Bo'sh qoldirilsa
+  // `l10n.playerDefaultName` ishlatiladi (map_header va profil ham shunday).
+  bool get _canFinish => _age != null;
 
   Future<void> _finish() async {
     if (!_canFinish) return;
     FocusScope.of(context).unfocus();
     AudioService.instance.play(Sfx.win);
-    await store.setPlayerName(_nameCtrl.text.trim());
+    await store.setPlayerName(_nameCtrl.text.trim());  // bo'sh bo'lsa UI default nom ko'rsatadi
     await store.setAvatar(_avatar);
     await store.setAge(_age);
     await store.setOnboarded(true); // -> app.dart RootShell'ga o'tadi

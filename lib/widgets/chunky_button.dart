@@ -18,6 +18,7 @@ class ChunkyButton extends StatefulWidget {
     this.minHeight,
     this.enabled = true,
     this.dimmed = false,
+    this.semanticLabel,
   });
 
   final Widget child;
@@ -33,6 +34,10 @@ class ChunkyButton extends StatefulWidget {
 
   /// Boshqa javob tanlanganda opacity .55 holati.
   final bool dimmed;
+
+  /// Screen reader uchun nom. Tugma mazmuni chizilgan shakl yoki ikonka
+  /// bo'lsa (matn emas) MAJBURIY — aks holda TalkBack «tugma» deb o'qiydi.
+  final String? semanticLabel;
 
   @override
   State<ChunkyButton> createState() => _ChunkyButtonState();
@@ -52,7 +57,7 @@ class _ChunkyButtonState extends State<ChunkyButton> {
     final down = _pressed && widget.enabled && widget.onPressed != null;
     final shift = down ? widget.ledge : 0.0;
 
-    return GestureDetector(
+    final Widget button = GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTapDown: widget.enabled ? (_) => _setPressed(true) : null,
       onTapCancel: () => _setPressed(false),
@@ -90,6 +95,13 @@ class _ChunkyButtonState extends State<ChunkyButton> {
           ),
         ),
       ),
+    );
+
+    return Semantics(
+      button: true,
+      enabled: widget.enabled,
+      label: widget.semanticLabel,
+      child: button,
     );
   }
 

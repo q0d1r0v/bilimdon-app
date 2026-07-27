@@ -109,7 +109,9 @@ class _BottomNav extends StatelessWidget {
         ),
       ),
       padding: EdgeInsets.only(
-        top: 10,
+        // 4 + 48dp tap zonasi ichidagi markazlash (6) = ikonka avvalgidek
+        // 10dp dan boshlanadi; tap maydoni esa 36 → 48dp ga o'sdi.
+        top: 4,
         left: 8,
         right: 8,
         bottom: bottomInset > 0 ? bottomInset : 12,
@@ -118,30 +120,47 @@ class _BottomNav extends StatelessWidget {
         children: [
           for (var i = 0; i < 4; i++)
             Expanded(
-              child: GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                onTap: () => onTap(i),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    SizedBox(
-                      width: 22,
-                      height: 18,
-                      child: _NavIcon(index: i, active: current == i),
+              child: Semantics(
+                button: true,
+                selected: current == i,
+                label: labels[i],
+                child: GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () => onTap(i),
+                  // Android minimal bosish maydoni 48dp. Ikonka+matn faqat
+                  // 36dp beradi, shuning uchun cheklov TAP ZONASI ICHIDA
+                  // bo'lishi kerak — tashqi `padding` hisoblanmaydi.
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(minHeight: 48),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ExcludeSemantics(
+                          child: SizedBox(
+                            width: 22,
+                            height: 18,
+                            child: _NavIcon(index: i, active: current == i),
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        ExcludeSemantics(
+                          child: Text(
+                            labels[i],
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: current == i
+                                  ? FontWeight.w600
+                                  : FontWeight.w400,
+                              color: current == i
+                                  ? FarmColors.red
+                                  : FarmColors.navInactive,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(height: 4),
-                    Text(
-                      labels[i],
-                      style: TextStyle(
-                        fontSize: 10,
-                        fontWeight:
-                            current == i ? FontWeight.w600 : FontWeight.w400,
-                        color: current == i
-                            ? FarmColors.red
-                            : FarmColors.navInactive,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),

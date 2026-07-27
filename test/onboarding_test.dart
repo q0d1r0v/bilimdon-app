@@ -69,7 +69,7 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('oqim: til -> ism(majburiy)+yosh+avatar -> Boshlash saqlaydi',
+  testWidgets('oqim: til -> ism(ixtiyoriy)+yosh(majburiy)+avatar -> Boshlash saqlaydi',
       (tester) async {
     SharedPreferences.setMockInitialValues({});
     final store = await ProgressStore.load();
@@ -85,7 +85,8 @@ void main() {
     // 2-qadam: ism maydoni paydo bo'ldi.
     expect(find.byType(TextField), findsOneWidget);
 
-    // Ism BO'SH — "Boshlash!" ishlamaydi (onboarded false qoladi).
+    // Yosh hali tanlanmagan — "Boshlash!" ishlamaydi. (Ism ixtiyoriy:
+    // yagona majburiy maydon — yosh; test/ui_fixes_test.dart buni qulflaydi.)
     await tester.tap(find.text('Boshlash!'));
     await tester.pump();
     expect(store.onboarded, isFalse);

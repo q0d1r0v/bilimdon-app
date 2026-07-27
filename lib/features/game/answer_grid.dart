@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../content/models.dart';
 import '../../core/theme/tokens.dart';
 import '../../core/utils/css_shapes.dart';
+import '../../l10n/app_localizations.dart';
 import '../../widgets/chunky_button.dart';
 import 'quiz_controller.dart';
 
@@ -107,31 +108,34 @@ class _AnswerGridState extends State<AnswerGrid>
       widget.phase == QuizPhase.feedbackWrong ||
       widget.phase == QuizPhase.feedbackReveal;
 
-  Widget _cellContent(AnswerCell cell) {
+  /// [fg] — tugma foniga mos matn/shakl rangi
+  /// ([FarmColors.answerForeground]): sariq/yashil/ko'k tugmada oq raqam
+  /// WCAG minimumidan past bo'lardi.
+  Widget _cellContent(AnswerCell cell, Color fg) {
     if (cell.number != null) {
       return Text(
         '${cell.number}',
-        style: const TextStyle(
+        style: TextStyle(
           fontSize: 28,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: fg,
         ),
       );
     }
-    // Oq shakllar (prototip): uchburchak 48×40, doira 42, kvadrat 40 r8,
-    // romb 34 rotate 45° r7.
+    // Shakllar (prototip o'lchamlari): uchburchak 48×40, doira 42,
+    // kvadrat 40 r8, romb 34 rotate 45° r7.
     return switch (cell.shape!) {
-      ShapeKind.triangle => const TriangleWidget(
+      ShapeKind.triangle => TriangleWidget(
           width: 48,
           height: 40,
-          color: Colors.white,
+          color: fg,
           direction: TriangleDirection.up,
         ),
       ShapeKind.circle => Container(
           width: 42,
           height: 42,
-          decoration: const BoxDecoration(
-            color: Colors.white,
+          decoration: BoxDecoration(
+            color: fg,
             shape: BoxShape.circle,
           ),
         ),
@@ -139,7 +143,7 @@ class _AnswerGridState extends State<AnswerGrid>
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: fg,
             borderRadius: BorderRadius.circular(8),
           ),
         ),
@@ -153,7 +157,7 @@ class _AnswerGridState extends State<AnswerGrid>
                 width: 34,
                 height: 34,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: fg,
                   borderRadius: BorderRadius.circular(7),
                 ),
               ),
@@ -187,8 +191,16 @@ class _AnswerGridState extends State<AnswerGrid>
         !isCorrectShown &&
         !isFaded;
 
+    final cell = widget.answers[i];
+    final l10n = AppLocalizations.of(context);
+    // Chizilgan shakl javoblari screen reader'da umuman o'qilmasdi.
+    final semanticLabel = cell.number != null
+        ? '${cell.number}'
+        : l10n.shapeName(cell.shape!.name);
+
     Widget button = ChunkyButton(
       key: widget.buttonKeys[i],
+      semanticLabel: semanticLabel,
       color: color,
       darkColor: dark,
       borderRadius: FarmRadius.answerButton,
@@ -197,7 +209,7 @@ class _AnswerGridState extends State<AnswerGrid>
       enabled: phase == QuizPhase.question && !isDisabled,
       dimmed: dimmed,
       onPressed: () => widget.onSelect(i),
-      child: _cellContent(widget.answers[i]),
+      child: _cellContent(cell, FarmColors.answerForeground(color)),
     );
 
     if (isSelectedWrong) {
