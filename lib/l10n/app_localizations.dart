@@ -274,6 +274,12 @@ abstract class AppLocalizations {
   /// **'{animal, select, chick{Nechta jo’jacha?} pig{Nechta cho’chqacha?} sheep{Nechta qo’zichoq?} other{Nechta?}}'**
   String promptCount(String animal);
 
+  /// No description provided for @shapeName.
+  ///
+  /// In uz, this message translates to:
+  /// **'{shape, select, triangle{Uchburchak} circle{Doira} square{Kvadrat} diamond{Romb} other{Shakl}}'**
+  String shapeName(String shape);
+
   /// No description provided for @promptFindShape.
   ///
   /// In uz, this message translates to:
@@ -346,6 +352,12 @@ abstract class AppLocalizations {
   /// **'Rasmga qara — u senga yordam beradi!'**
   String get bubbleHint2;
 
+  /// No description provided for @bubbleHintLook.
+  ///
+  /// In uz, this message translates to:
+  /// **'Javoblarga diqqat bilan qara!'**
+  String get bubbleHintLook;
+
   /// No description provided for @bubbleReveal.
   ///
   /// In uz, this message translates to:
@@ -373,7 +385,7 @@ abstract class AppLocalizations {
   /// No description provided for @plusCoins.
   ///
   /// In uz, this message translates to:
-  /// **'+{n} tanga'**
+  /// **'+{n, plural, other{{n} tanga}}'**
   String plusCoins(int n);
 
   /// No description provided for @playAgain.

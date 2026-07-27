@@ -53,6 +53,14 @@
       }
     }
   },
+  "shapeName": "{shape, select, triangle{Uchburchak} circle{Doira} square{Kvadrat} diamond{Romb} other{Shakl}}",
+  "@shapeName": {
+    "placeholders": {
+      "shape": {
+        "type": "String"
+      }
+    }
+  },
   "promptFindShape": "{shape, select, triangle{Uchburchakni top!} circle{Doirani top!} square{Kvadratni top!} diamond{Rombni top!} other{Shaklni top!}}",
   "@promptFindShape": {
     "placeholders": {
@@ -89,6 +97,7 @@
   "bubbleWrong2": "Muu! Yana bir bor o’ylab ko’r!",
   "bubbleHint1": "Kel, birga sanaymiz: bir, ikki, uch...",
   "bubbleHint2": "Rasmga qara — u senga yordam beradi!",
+  "bubbleHintLook": "Javoblarga diqqat bilan qara!",
   "bubbleReveal": "Javob mana bu edi! Keyingisini birga topamiz!",
   "bubbleTimeUp": "Vaqt tugadi, hechqisi yo’q — davom etamiz!",
   "finishTitle": "Muu! Barakalla!",
@@ -100,7 +109,7 @@
       }
     }
   },
-  "plusCoins": "+{n} tanga",
+  "plusCoins": "+{n, plural, other{{n} tanga}}",
   "@plusCoins": {
     "placeholders": {
       "n": {

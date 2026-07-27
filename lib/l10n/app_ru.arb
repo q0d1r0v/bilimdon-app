@@ -35,6 +35,7 @@
   "tagComparison": "СРАВНЕНИЕ",
 
   "promptCount": "{animal, select, chick{Сколько цыплят?} pig{Сколько поросят?} sheep{Сколько ягнят?} other{Сколько?}}",
+  "shapeName": "{shape, select, triangle{Треугольник} circle{Круг} square{Квадрат} diamond{Ромб} other{Фигура}}",
   "promptFindShape": "{shape, select, triangle{Найди треугольник!} circle{Найди круг!} square{Найди квадрат!} diamond{Найди ромб!} other{Найди фигуру!}}",
   "promptBiggest": "Какое число самое большое?",
   "promptSmallest": "Какое число самое маленькое?",
@@ -49,12 +50,13 @@
   "bubbleWrong2": "Му-у! Подумай ещё разок!",
   "bubbleHint1": "Давай посчитаем вместе: один, два, три...",
   "bubbleHint2": "Посмотри на картинку — она поможет!",
+  "bubbleHintLook": "Посмотри внимательно на ответы!",
   "bubbleReveal": "Вот правильный ответ! Следующий найдём вместе!",
   "bubbleTimeUp": "Время вышло, ничего — продолжаем!",
 
   "finishTitle": "Му-у! Умница!",
   "finishSubtitle": "Уровень {level} пройден",
-  "plusCoins": "+{n} монет",
+  "plusCoins": "+{n, plural, one{{n} монета} few{{n} монеты} many{{n} монет} other{{n} монет}}",
   "playAgain": "Играть снова",
   "continueButton": "Дальше",
 

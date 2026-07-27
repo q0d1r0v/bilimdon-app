@@ -108,6 +108,18 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String shapeName(String shape) {
+    String _temp0 = intl.Intl.selectLogic(shape, {
+      'triangle': 'Triangle',
+      'circle': 'Circle',
+      'square': 'Square',
+      'diamond': 'Diamond',
+      'other': 'Shape',
+    });
+    return '$_temp0';
+  }
+
+  @override
   String promptFindShape(String shape) {
     String _temp0 = intl.Intl.selectLogic(shape, {
       'triangle': 'Find the triangle!',
@@ -157,6 +169,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get bubbleHint2 => 'Look at the picture — it will help!';
 
   @override
+  String get bubbleHintLook => 'Look closely at the answers!';
+
+  @override
   String get bubbleReveal =>
       'Here is the answer! Let’s find the next one together!';
 
@@ -173,7 +188,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String plusCoins(int n) {
-    return '+$n coins';
+    String _temp0 = intl.Intl.pluralLogic(
+      n,
+      locale: localeName,
+      other: '$n coins',
+      one: '1 coin',
+    );
+    return '+$_temp0';
   }
 
   @override
