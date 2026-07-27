@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "chapter": {
     "id": 5,
     "levels": [
@@ -84,7 +84,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                4,
+                10
+              ]
             },
             "answers": [
               {
@@ -185,7 +189,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                8,
+                10
+              ]
             },
             "answers": [
               {
@@ -212,7 +220,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                10,
+                8
+              ]
             },
             "answers": [
               {
@@ -239,7 +251,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                7,
+                8
+              ]
             },
             "answers": [
               {
@@ -266,7 +282,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                9,
+                9
+              ]
             },
             "answers": [
               {
@@ -293,7 +313,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                5,
+                10
+              ]
             },
             "answers": [
               {
@@ -390,7 +414,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                15
+              ],
+              "faded": 5
             },
             "answers": [
               {
@@ -487,7 +515,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                18
+              ],
+              "faded": 7
             },
             "answers": [
               {
@@ -514,7 +546,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                20
+              ],
+              "faded": 3
             },
             "answers": [
               {
@@ -541,7 +577,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                13
+              ],
+              "faded": 12
             },
             "answers": [
               {
@@ -568,7 +608,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                13
+              ],
+              "faded": 6
             },
             "answers": [
               {
@@ -595,7 +639,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                15
+              ],
+              "faded": 5
             },
             "answers": [
               {
@@ -632,7 +680,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                8,
+                10
+              ]
             },
             "answers": [
               {
@@ -689,7 +741,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                10,
+                5
+              ]
             },
             "answers": [
               {
@@ -746,7 +802,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                10,
+                6
+              ]
             },
             "answers": [
               {
@@ -783,7 +843,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                7,
+                9
+              ]
             },
             "answers": [
               {
@@ -840,7 +904,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                10,
+                8
+              ]
             },
             "answers": [
               {
@@ -867,7 +935,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                14
+              ],
+              "faded": 1
             },
             "answers": [
               {
@@ -892,7 +964,13 @@
               "mode": "biggest"
             },
             "visual": {
-              "kind": "none"
+              "kind": "bars",
+              "values": [
+                12,
+                7,
+                17,
+                20
+              ]
             },
             "answers": [
               {

@@ -11,7 +11,7 @@ class ContentRepository {
   ContentRepository();
 
   /// Qo'llab-quvvatlanadigan JSON sxema versiyasi.
-  static const int schemaVersion = 1;
+  static const int schemaVersion = 2;
 
   static const List<String> _chapterAssets = [
     'assets/content/ch1.json',

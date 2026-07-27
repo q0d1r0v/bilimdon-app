@@ -11,8 +11,8 @@ import 'package:math_farm/content/models.dart';
 ChapterDef _loadChapter(String name) {
   final file = File('${Directory.current.path}/assets/content/$name.json');
   final root = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
-  if (root['schemaVersion'] != 1) {
-    throw FormatException('$name.json: schemaVersion 1 kutilgan edi');
+  if (root['schemaVersion'] != 2) {
+    throw FormatException('$name.json: schemaVersion 2 kutilgan edi');
   }
   return ChapterDef.fromJson(
     Map<String, Object?>.from(root['chapter'] as Map),
@@ -180,6 +180,190 @@ void main() {
         _throwsFormatWithId(_qId),
       );
       expect(Question.fromJson(faded(5, 4)).visual?.faded, 4);
+    });
+
+    test('yangi vizual turlari: majburiy maydonlar va diapazonlar', () {
+      // groupRows — a qator × b hayvon.
+      Map<String, Object?> mult(Map<String, Object?> visual) => _question(
+            type: 'multiplication',
+            data: const {'a': 3, 'b': 2},
+            visual: visual,
+            answers: const [
+              {'number': 6},
+              {'number': 5},
+              {'number': 8},
+              {'number': 4},
+            ],
+          );
+      // groups uzunligi data.a ga mos emas.
+      expect(
+        () => Question.fromJson(mult(const {
+          'kind': 'groupRows',
+          'animal': 'chick',
+          'groups': [2, 2],
+        })),
+        _throwsFormatWithId(_qId),
+      );
+      // groups elementi data.b ga mos emas.
+      expect(
+        () => Question.fromJson(mult(const {
+          'kind': 'groupRows',
+          'animal': 'chick',
+          'groups': [2, 2, 3],
+        })),
+        _throwsFormatWithId(_qId),
+      );
+      // animal yo'q.
+      expect(
+        () => Question.fromJson(mult(const {
+          'kind': 'groupRows',
+          'groups': [2, 2, 2],
+        })),
+        _throwsFormatWithId(_qId),
+      );
+      // To'g'ri variant qabul qilinadi.
+      expect(
+        Question.fromJson(mult(const {
+          'kind': 'groupRows',
+          'animal': 'chick',
+          'groups': [2, 2, 2],
+        })).visual?.groups,
+        [2, 2, 2],
+      );
+
+      // numberLine — hadlar qadamga mos bo'lishi shart.
+      Map<String, Object?> seq(Map<String, Object?> visual) => _question(
+            type: 'sequence',
+            data: const {'terms': [2, 4, 6]},
+            visual: visual,
+          );
+      expect(
+        () => Question.fromJson(seq(const {
+          'kind': 'numberLine',
+          'terms': [2, 4, 7],
+          'step': 2,
+        })),
+        _throwsFormatWithId(_qId),
+        reason: 'notekis hadlar strelkani yolg’on qiladi',
+      );
+      expect(
+        () => Question.fromJson(seq(const {
+          'kind': 'numberLine',
+          'terms': [2, 4, 6],
+          'step': 0,
+        })),
+        _throwsFormatWithId(_qId),
+      );
+      expect(
+        () => Question.fromJson(seq(const {
+          'kind': 'numberLine',
+          'terms': [2, 4, 6],
+        })),
+        _throwsFormatWithId(_qId),
+        reason: 'step majburiy',
+      );
+      expect(
+        Question.fromJson(seq(const {
+          'kind': 'numberLine',
+          'terms': [2, 4, 6],
+          'step': 2,
+        })).visual?.step,
+        2,
+      );
+
+      // bars — javoblardagi sonlarning permutatsiyasi bo'lishi shart.
+      Map<String, Object?> cmp(Map<String, Object?> visual) => _question(
+            type: 'comparison',
+            data: const {'mode': 'biggest'},
+            visual: visual,
+            answers: const [
+              {'number': 16},
+              {'number': 9},
+              {'number': 17},
+              {'number': 18},
+            ],
+          );
+      expect(
+        () => Question.fromJson(cmp(const {
+          'kind': 'bars',
+          'values': [16, 9, 17, 20],
+        })),
+        _throwsFormatWithId(_qId),
+        reason: 'ustunda ko’rinadigan son tugmada bo’lmasa bola topolmaydi',
+      );
+      expect(
+        () => Question.fromJson(cmp(const {
+          'kind': 'bars',
+          'values': [16, 9, 17],
+        })),
+        _throwsFormatWithId(_qId),
+      );
+      expect(
+        Question.fromJson(cmp(const {
+          'kind': 'bars',
+          'values': [18, 16, 9, 17],
+        })).visual?.values,
+        [18, 16, 9, 17],
+      );
+
+      // tenFrame — qo'shishda groups [a, b], ayirishda [a] + faded.
+      expect(
+        Question.fromJson(_question(
+          data: const {'a': 8, 'b': 6, 'missing': 'none'},
+          visual: const {'kind': 'tenFrame', 'groups': [8, 6]},
+          answers: const [
+            {'number': 14},
+            {'number': 13},
+            {'number': 15},
+            {'number': 12},
+          ],
+        )).visual?.groups,
+        [8, 6],
+      );
+      expect(
+        () => Question.fromJson(_question(
+          data: const {'a': 8, 'b': 6, 'missing': 'none'},
+          visual: const {'kind': 'tenFrame', 'groups': [8, 5]},
+          answers: const [
+            {'number': 14},
+            {'number': 13},
+            {'number': 15},
+            {'number': 12},
+          ],
+        )),
+        _throwsFormatWithId(_qId),
+      );
+      // Yig'indi 20 dan oshmasin.
+      expect(
+        () => Question.fromJson(_question(
+          data: const {'a': 12, 'b': 11, 'missing': 'none'},
+          visual: const {'kind': 'tenFrame', 'groups': [12, 11]},
+          answers: const [
+            {'number': 20},
+            {'number': 19},
+            {'number': 18},
+            {'number': 17},
+          ],
+        )),
+        _throwsFormatWithId(_qId),
+      );
+    });
+
+    test('vizual noto’g’ri savol turida rad etiladi', () {
+      // bars faqat taqqoslashda.
+      expect(
+        () => Question.fromJson(_question(
+          visual: const {'kind': 'bars', 'values': [7, 6, 8, 5]},
+        )),
+        _throwsFormatWithId(_qId),
+      );
+      // numberLine faqat ketma-ketlikda.
+      expect(
+        () => Question.fromJson(_question(
+          visual: const {'kind': 'numberLine', 'terms': [1, 2], 'step': 1},
+        )),
+        _throwsFormatWithId(_qId),
+      );
     });
 
     test('missing "b" bo’lsa "data.c" siz rad etiladi', () {

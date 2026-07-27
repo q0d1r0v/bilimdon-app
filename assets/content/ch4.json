@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "chapter": {
     "id": 4,
     "levels": [
@@ -22,7 +22,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                12,
+                13,
+                14
+              ],
+              "step": 1
             },
             "answers": [
               {
@@ -51,7 +57,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                13,
+                14,
+                15
+              ],
+              "step": 1
             },
             "answers": [
               {
@@ -80,7 +92,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                8,
+                10,
+                12
+              ],
+              "step": 2
             },
             "answers": [
               {
@@ -109,7 +127,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                12,
+                14,
+                16
+              ],
+              "step": 2
             },
             "answers": [
               {
@@ -138,7 +162,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                14,
+                16,
+                18
+              ],
+              "step": 2
             },
             "answers": [
               {
@@ -173,7 +203,13 @@
               "mode": "biggest"
             },
             "visual": {
-              "kind": "none"
+              "kind": "bars",
+              "values": [
+                12,
+                9,
+                8,
+                15
+              ]
             },
             "answers": [
               {
@@ -198,7 +234,13 @@
               "mode": "smallest"
             },
             "visual": {
-              "kind": "none"
+              "kind": "bars",
+              "values": [
+                9,
+                17,
+                15,
+                18
+              ]
             },
             "answers": [
               {
@@ -223,7 +265,13 @@
               "mode": "biggest"
             },
             "visual": {
-              "kind": "none"
+              "kind": "bars",
+              "values": [
+                8,
+                13,
+                6,
+                11
+              ]
             },
             "answers": [
               {
@@ -248,7 +296,13 @@
               "mode": "smallest"
             },
             "visual": {
-              "kind": "none"
+              "kind": "bars",
+              "values": [
+                10,
+                13,
+                7,
+                14
+              ]
             },
             "answers": [
               {
@@ -273,7 +327,13 @@
               "mode": "biggest"
             },
             "visual": {
-              "kind": "none"
+              "kind": "bars",
+              "values": [
+                15,
+                9,
+                7,
+                12
+              ]
             },
             "answers": [
               {
@@ -312,7 +372,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                12,
+                14,
+                16
+              ],
+              "step": 2
             },
             "answers": [
               {
@@ -337,7 +403,13 @@
               "mode": "biggest"
             },
             "visual": {
-              "kind": "none"
+              "kind": "bars",
+              "values": [
+                15,
+                8,
+                18,
+                12
+              ]
             },
             "answers": [
               {
@@ -366,7 +438,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                12,
+                13,
+                14
+              ],
+              "step": 1
             },
             "answers": [
               {
@@ -391,7 +469,13 @@
               "mode": "smallest"
             },
             "visual": {
-              "kind": "none"
+              "kind": "bars",
+              "values": [
+                8,
+                9,
+                13,
+                7
+              ]
             },
             "answers": [
               {
@@ -420,7 +504,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                16,
+                17,
+                18
+              ],
+              "step": 1
             },
             "answers": [
               {
@@ -489,7 +579,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                7,
+                7
+              ]
             },
             "answers": [
               {
@@ -548,7 +642,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                6,
+                7
+              ]
             },
             "answers": [
               {
@@ -651,7 +749,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                15,
+                16,
+                17
+              ],
+              "step": 1
             },
             "answers": [
               {
@@ -678,7 +782,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                4,
+                10
+              ]
             },
             "answers": [
               {
@@ -703,7 +811,13 @@
               "mode": "biggest"
             },
             "visual": {
-              "kind": "none"
+              "kind": "bars",
+              "values": [
+                12,
+                9,
+                13,
+                11
+              ]
             },
             "answers": [
               {
@@ -730,7 +844,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                5,
+                9
+              ]
             },
             "answers": [
               {
@@ -769,7 +887,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                12,
+                13,
+                14
+              ],
+              "step": 1
             },
             "answers": [
               {
@@ -796,7 +920,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                6,
+                9
+              ]
             },
             "answers": [
               {
@@ -821,7 +949,13 @@
               "mode": "biggest"
             },
             "visual": {
-              "kind": "none"
+              "kind": "bars",
+              "values": [
+                9,
+                7,
+                14,
+                13
+              ]
             },
             "answers": [
               {
@@ -850,7 +984,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                9,
+                11,
+                13
+              ],
+              "step": 2
             },
             "answers": [
               {
@@ -877,7 +1017,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                8,
+                8
+              ]
             },
             "answers": [
               {

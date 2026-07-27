@@ -25,7 +25,7 @@ const OUT_DIR = join(
   'assets',
   'content',
 );
-const SCHEMA_VERSION = 1;
+const SCHEMA_VERSION = 2;
 const QUESTIONS_PER_LEVEL = 5;
 const ANIMALS = ['chick', 'sheep', 'pig'];
 const SHAPES = ['triangle', 'circle', 'square', 'diamond'];
@@ -140,7 +140,7 @@ function makeAddition(rng, id, a, b) {
   const visual =
     c <= 12
       ? { kind: 'grouped', animal: 'pig', groups: [a, b] }
-      : { kind: 'none' };
+      : { kind: 'tenFrame', groups: [a, b] };
   return {
     id,
     type: 'addition',
@@ -155,7 +155,7 @@ function makeSubtraction(rng, id, a, b) {
   const visual =
     a <= 12
       ? { kind: 'faded', animal: 'sheep', count: a, faded: b }
-      : { kind: 'none' };
+      : { kind: 'tenFrame', groups: [a], faded: b };
   // a+b — "amalni adashtirish" distraktori: 20 dan oshmasa doim kiradi.
   return {
     id,
@@ -169,11 +169,16 @@ function makeSubtraction(rng, id, a, b) {
 /** Yetishmayotgan operand: a + ? = c yoki a − ? = c (javob — b). */
 function makeMissing(rng, id, op, a, b) {
   const c = op === 'addition' ? a + b : a - b;
+  // Ikki amalda ham ramkada NATIJAga qadar to'ldirilgan kataklar ko'rsatiladi,
+  // qolgani sariq halqa: a + ? = c → a ta to'la, halqa c gacha;
+  // a − ? = c → c ta to'la, halqa a gacha (javob = a − c).
+  const filled = op === 'addition' ? a : c;
+  const goal = op === 'addition' ? c : a;
   return {
     id,
     type: op,
     data: { a, b, missing: 'b', c },
-    visual: { kind: 'none' },
+    visual: { kind: 'tenFrame', groups: [filled], target: goal },
     ...numberAnswers(rng, b, [b - 1, b + 1, b - 2, b + 2, a, c]),
   };
 }
@@ -196,7 +201,7 @@ function makeSequence(rng, id, terms, next) {
     id,
     type: 'sequence',
     data: { terms },
-    visual: { kind: 'none' },
+    visual: { kind: 'numberLine', terms, step: terms[1] - terms[0] },
     ...numberAnswers(rng, next, [
       next - 1,
       next + 1,
@@ -225,7 +230,7 @@ function makeComparison(rng, id, mode) {
     id,
     type: 'comparison',
     data: { mode },
-    visual: { kind: 'none' },
+    visual: { kind: 'bars', values: order },
     answers: order.map((number) => ({ number })),
     correctIndex: order.indexOf(correct),
   };
@@ -276,7 +281,12 @@ function makeMultiplication(rng, id, a, b) {
     id,
     type: 'multiplication',
     data: { a, b },
-    visual: { kind: 'none' },
+    // a <= 3 && b <= 10 — aks holda vizual balandlik budjetiga sig'maydi
+    // (test/visual_hint_test.dart dagi sweep buni qo'riqlaydi).
+    visual:
+      a <= 3 && b <= 10
+        ? { kind: 'groupRows', animal: 'chick', groups: Array(a).fill(b) }
+        : { kind: 'none' },
     ...numberAnswers(rng, c, [c - a, c + a, c - b, c + b, a + b, c - 2, c + 2]),
   };
 }
@@ -431,7 +441,11 @@ const LEVEL_DEFS = [
 
   // === 3-BOB: Shakllar, mantiq, taqqoslash ===
   {
-    id: '3-1', // shakllar (romsbsiz maqsadlar)
+    id: '3-1', // shakllar (rombsiz maqsadlar)
+    // Romb ATAYLAB kiritilmaydi (u 3-2 da tanishtiriladi) → 3 shakl, 5 savol,
+    // ya'ni kamida 2 takror MUQARRAR (kaptar uyasi qoidasi). Takrorlar teng
+    // taqsimlangan (2+2+1) va javob pozitsiyasi har savolda aralashtiriladi.
+    allowedRepeats: 2,
     build: (rng, qid) =>
       ['triangle', 'circle', 'square', 'triangle', 'circle'].map(
         (target, i) => makeShapes(rng, qid(i + 1), target),
@@ -439,8 +453,11 @@ const LEVEL_DEFS = [
   },
   {
     id: '3-2', // shakllar + romb
+    // 4 shakl, 5 savol → 1 takror muqarrar. Romb — yangi shakl, shuning uchun
+    // aynan u ikki marta (boshi va oxiri) so'raladi; qolgan uchtasi bir marta.
+    allowedRepeats: 1,
     build: (rng, qid) =>
-      ['diamond', 'triangle', 'diamond', 'square', 'diamond'].map(
+      ['diamond', 'triangle', 'square', 'circle', 'diamond'].map(
         (target, i) => makeShapes(rng, qid(i + 1), target),
       ),
   },
@@ -671,13 +688,82 @@ function validateQuestion(q) {
   }
 }
 
-function buildLevel({ id, timerSeconds = 0, shuffleAnswers = true, build }) {
+/**
+ * Savolning MAZMUNIY o'zligi — bola ekranda ko'radigan topshiriq.
+ *
+ * Diqqat: `data` savolni har doim to'liq aniqlamaydi —
+ *   - `counting` da son `visual.count` da (`data` faqat hayvonni saqlaydi);
+ *   - `comparison` da to'rt son `answers` da (`data` faqat rejimni saqlaydi).
+ * Shu sababli imzo shu joylardan ham o'qiydi, aks holda haqiqatan har xil
+ * savollar «takror» deb noto'g'ri rad etilardi.
+ */
+function questionSignature(q) {
+  const d = q.data;
+  switch (q.type) {
+    case 'counting':
+      return `counting|${d.animal}|${q.visual?.count}`;
+    case 'addition':
+    case 'subtraction':
+      return `${q.type}|${d.a}|${d.b}|${d.missing}`;
+    case 'multiplication':
+      return `multiplication|${d.a}|${d.b}`;
+    case 'sequence':
+      return `sequence|${d.terms.join(',')}`;
+    case 'shapes':
+      return `shapes|${d.target}`;
+    case 'comparison':
+      return `comparison|${d.mode}|${q.answers
+        .map((cell) => cell.number)
+        .slice()
+        .sort((x, y) => x - y)
+        .join(',')}`;
+    default:
+      throw new Error(`imzo uchun noma'lum savol turi: ${q.type}`);
+  }
+}
+
+/** Daraja ichidagi takror savollar soni (0 — hammasi har xil). */
+function duplicateCount(questions) {
+  const seen = new Set();
+  let dups = 0;
+  for (const q of questions) {
+    const sig = questionSignature(q);
+    if (seen.has(sig)) dups += 1;
+    else seen.add(sig);
+  }
+  return dups;
+}
+
+// Takrorsiz to'plam topish uchun urug'ni qayta surish chegarasi. 6-2 eng qattiq
+// holat (3× jadval: b ∈ 2..6 — aynan 5 imkoniyat, 5 savol), shuning uchun zaxira
+// keng olingan.
+const MAX_DEDUP_ATTEMPTS = 500;
+
+function buildLevel({
+  id,
+  timerSeconds = 0,
+  shuffleAnswers = true,
+  allowedRepeats = 0,
+  build,
+}) {
   const [chapterStr, indexStr] = id.split('-');
-  const rng = mulberry32(fnv1a(id));
   const qid = (n) => `${id}-q${n}`;
-  const questions = build(rng, qid);
-  if (questions.length !== QUESTIONS_PER_LEVEL) {
-    throw new Error(`daraja ${id}: ${QUESTIONS_PER_LEVEL} ta savol emas`);
+  let questions;
+  let attempt = 0;
+  for (; attempt < MAX_DEDUP_ATTEMPTS; attempt += 1) {
+    // attempt 0 — tarixiy urug': takrorsiz darajalar BAYT-BAYT o'zgarmaydi.
+    const rng = mulberry32(fnv1a(attempt === 0 ? id : `${id}#${attempt}`));
+    questions = build(rng, qid);
+    if (questions.length !== QUESTIONS_PER_LEVEL) {
+      throw new Error(`daraja ${id}: ${QUESTIONS_PER_LEVEL} ta savol emas`);
+    }
+    if (duplicateCount(questions) <= allowedRepeats) break;
+  }
+  if (attempt >= MAX_DEDUP_ATTEMPTS) {
+    throw new Error(
+      `daraja ${id}: ${MAX_DEDUP_ATTEMPTS} urinishda ham takror savol ` +
+        `yo'qolmadi (ruxsat etilgan: ${allowedRepeats})`,
+    );
   }
   questions.forEach(validateQuestion);
   return {

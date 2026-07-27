@@ -9,8 +9,8 @@ import 'package:math_farm/content/models.dart';
 ChapterDef _loadChapter(String name) {
   final file = File('${Directory.current.path}/assets/content/$name.json');
   final root = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
-  if (root['schemaVersion'] != 1) {
-    throw FormatException('$name.json: schemaVersion 1 kutilgan edi');
+  if (root['schemaVersion'] != 2) {
+    throw FormatException('$name.json: schemaVersion 2 kutilgan edi');
   }
   return ChapterDef.fromJson(
     Map<String, Object?>.from(root['chapter'] as Map),
@@ -20,6 +20,33 @@ ChapterDef _loadChapter(String name) {
 List<AnswerCell> _numbers(List<int> values) => [
       for (final value in values) AnswerCell.number(value),
     ];
+
+/// Savolning MAZMUNIY o'zligi — `tools/generate_questions.mjs` dagi
+/// `questionSignature` ning aynan ko'zgusi.
+///
+/// `data` savolni har doim to'liq aniqlamaydi: `counting` da son `visual.count`
+/// da, `comparison` da to'rt son `answers` da. Shuning uchun imzo shu
+/// joylardan ham o'qiydi.
+String _signature(Question q) {
+  final d = q.data;
+  return switch (q.type) {
+    QuestionType.counting =>
+      'counting|${d['animal']}|${q.visual?.count}',
+    QuestionType.addition || QuestionType.subtraction =>
+      '${q.type.name}|${d['a']}|${d['b']}|${d['missing']}',
+    QuestionType.multiplication => 'multiplication|${d['a']}|${d['b']}',
+    QuestionType.sequence =>
+      'sequence|${(d['terms'] as List).join(',')}',
+    QuestionType.shapes => 'shapes|${d['target']}',
+    QuestionType.comparison => 'comparison|${d['mode']}|'
+        '${(q.answers.map((c) => c.number!).toList()..sort()).join(',')}',
+  };
+}
+
+/// Shakl savollarida maqsad 4 xil bo'lgani uchun 5 savolli darajada takror
+/// MUQARRAR (kaptar uyasi qoidasi): 3-1 romb ishlatmaydi (3 shakl → 2 takror),
+/// 3-2 to'rttasini ishlatadi (→ 1 takror). Boshqa hamma darajada 0 bo'lishi shart.
+const _allowedRepeats = {'3-1': 2, '3-2': 1};
 
 void main() {
   late List<ChapterDef> chapters;
@@ -59,6 +86,83 @@ void main() {
         );
       }
     }
+  });
+
+  test('daraja ichida bir xil savol qayta so’ralmaydi', () {
+    for (final chapter in chapters) {
+      for (final level in chapter.levels) {
+        final counts = <String, int>{};
+        for (final question in level.questions) {
+          final sig = _signature(question);
+          counts[sig] = (counts[sig] ?? 0) + 1;
+        }
+        final repeats = counts.values
+            .where((n) => n > 1)
+            .fold(0, (sum, n) => sum + (n - 1));
+        expect(
+          repeats,
+          _allowedRepeats[level.id] ?? 0,
+          reason: '${level.id}: takrorlangan savollar — '
+              '${counts.entries.where((e) => e.value > 1).map((e) => '${e.key} ×${e.value}').join(', ')}',
+        );
+      }
+    }
+  });
+
+  test('vizualsiz savollar faqat shakllar va 1-3 prototipi', () {
+    final withoutVisual = <String>[];
+    for (final chapter in chapters) {
+      for (final level in chapter.levels) {
+        for (final q in level.questions) {
+          if (q.visual == null || q.visual!.kind == VisualKind.none) {
+            withoutVisual.add(q.id);
+          }
+        }
+      }
+    }
+    // 12 shakl savoli (javob kataklarining o'zi shakl — vizual kerak emas)
+    // + 1-3-q3 (prototip shakl) + 1-3-q5 (DESIGN_SPEC.md:143 «vizualsiz»).
+    expect(
+      withoutVisual,
+      hasLength(13),
+      reason: 'vizualsiz qolganlar: $withoutVisual',
+    );
+    for (final id in withoutVisual) {
+      expect(
+        id.startsWith('3-1-') ||
+            id.startsWith('3-2-') ||
+            id == '3-6-q5' ||
+            id == '1-3-q3' ||
+            id == '1-3-q5',
+        isTrue,
+        reason: '$id vizualsiz qolmasligi kerak edi',
+      );
+    }
+  });
+
+  test('vizual turlari taqsimoti kutilganidek', () {
+    final counts = <VisualKind, int>{};
+    for (final chapter in chapters) {
+      for (final level in chapter.levels) {
+        for (final q in level.questions) {
+          final kind = q.visual?.kind ?? VisualKind.none;
+          counts[kind] = (counts[kind] ?? 0) + 1;
+        }
+      }
+    }
+    expect(counts[VisualKind.groupRows], 20, reason: 'ko’paytirish');
+    expect(counts[VisualKind.tenFrame], 35, reason: 'qo’shish/ayirish 12+');
+    expect(counts[VisualKind.numberLine], 23, reason: 'ketma-ketlik');
+    expect(counts[VisualKind.bars], 22, reason: 'taqqoslash');
+    expect(counts[VisualKind.none], 13);
+    // Jami yangi vizual: 100.
+    expect(
+      counts[VisualKind.groupRows]! +
+          counts[VisualKind.tenFrame]! +
+          counts[VisualKind.numberLine]! +
+          counts[VisualKind.bars]!,
+      100,
+    );
   });
 
   test('har bir savol tekshiruv qoidalariga mos', () {

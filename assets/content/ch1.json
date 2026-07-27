@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "chapter": {
     "id": 1,
     "levels": [
@@ -20,12 +20,9 @@
             "visual": {
               "kind": "count",
               "animal": "chick",
-              "count": 2
+              "count": 3
             },
             "answers": [
-              {
-                "number": 2
-              },
               {
                 "number": 3
               },
@@ -34,6 +31,9 @@
               },
               {
                 "number": 5
+              },
+              {
+                "number": 6
               }
             ],
             "correctIndex": 0
@@ -47,23 +47,23 @@
             "visual": {
               "kind": "count",
               "animal": "sheep",
-              "count": 3
+              "count": 5
             },
             "answers": [
               {
-                "number": 2
-              },
-              {
-                "number": 3
-              },
-              {
-                "number": 4
-              },
-              {
                 "number": 5
+              },
+              {
+                "number": 6
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 8
               }
             ],
-            "correctIndex": 1
+            "correctIndex": 0
           },
           {
             "id": "1-1-q3",
@@ -74,7 +74,7 @@
             "visual": {
               "kind": "count",
               "animal": "pig",
-              "count": 3
+              "count": 5
             },
             "answers": [
               {
@@ -90,7 +90,7 @@
                 "number": 6
               }
             ],
-            "correctIndex": 0
+            "correctIndex": 2
           },
           {
             "id": "1-1-q4",
@@ -101,7 +101,7 @@
             "visual": {
               "kind": "count",
               "animal": "chick",
-              "count": 3
+              "count": 4
             },
             "answers": [
               {
@@ -117,7 +117,7 @@
                 "number": 6
               }
             ],
-            "correctIndex": 0
+            "correctIndex": 1
           },
           {
             "id": "1-1-q5",
@@ -128,23 +128,23 @@
             "visual": {
               "kind": "count",
               "animal": "chick",
-              "count": 3
+              "count": 5
             },
             "answers": [
               {
-                "number": 1
-              },
-              {
-                "number": 2
-              },
-              {
-                "number": 3
-              },
-              {
                 "number": 4
+              },
+              {
+                "number": 5
+              },
+              {
+                "number": 6
+              },
+              {
+                "number": 7
               }
             ],
-            "correctIndex": 2
+            "correctIndex": 1
           }
         ]
       },

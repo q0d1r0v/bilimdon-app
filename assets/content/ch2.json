@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "chapter": {
     "id": 2,
     "levels": [
@@ -15,14 +15,14 @@
             "id": "2-1-q1",
             "type": "subtraction",
             "data": {
-              "a": 2,
+              "a": 3,
               "b": 1,
               "missing": "none"
             },
             "visual": {
               "kind": "faded",
               "animal": "sheep",
-              "count": 2,
+              "count": 3,
               "faded": 1
             },
             "answers": [
@@ -30,16 +30,16 @@
                 "number": 3
               },
               {
+                "number": 4
+              },
+              {
                 "number": 1
               },
               {
                 "number": 2
-              },
-              {
-                "number": 0
               }
             ],
-            "correctIndex": 1
+            "correctIndex": 3
           },
           {
             "id": "2-1-q2",
@@ -75,66 +75,6 @@
             "id": "2-1-q3",
             "type": "subtraction",
             "data": {
-              "a": 3,
-              "b": 1,
-              "missing": "none"
-            },
-            "visual": {
-              "kind": "faded",
-              "animal": "sheep",
-              "count": 3,
-              "faded": 1
-            },
-            "answers": [
-              {
-                "number": 4
-              },
-              {
-                "number": 1
-              },
-              {
-                "number": 3
-              },
-              {
-                "number": 2
-              }
-            ],
-            "correctIndex": 3
-          },
-          {
-            "id": "2-1-q4",
-            "type": "subtraction",
-            "data": {
-              "a": 4,
-              "b": 2,
-              "missing": "none"
-            },
-            "visual": {
-              "kind": "faded",
-              "animal": "sheep",
-              "count": 4,
-              "faded": 2
-            },
-            "answers": [
-              {
-                "number": 4
-              },
-              {
-                "number": 2
-              },
-              {
-                "number": 1
-              },
-              {
-                "number": 6
-              }
-            ],
-            "correctIndex": 1
-          },
-          {
-            "id": "2-1-q5",
-            "type": "subtraction",
-            "data": {
               "a": 5,
               "b": 1,
               "missing": "none"
@@ -147,7 +87,7 @@
             },
             "answers": [
               {
-                "number": 3
+                "number": 1
               },
               {
                 "number": 6
@@ -160,6 +100,66 @@
               }
             ],
             "correctIndex": 2
+          },
+          {
+            "id": "2-1-q4",
+            "type": "subtraction",
+            "data": {
+              "a": 4,
+              "b": 1,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "faded",
+              "animal": "sheep",
+              "count": 4,
+              "faded": 1
+            },
+            "answers": [
+              {
+                "number": 5
+              },
+              {
+                "number": 3
+              },
+              {
+                "number": 2
+              },
+              {
+                "number": 4
+              }
+            ],
+            "correctIndex": 1
+          },
+          {
+            "id": "2-1-q5",
+            "type": "subtraction",
+            "data": {
+              "a": 5,
+              "b": 2,
+              "missing": "none"
+            },
+            "visual": {
+              "kind": "faded",
+              "animal": "sheep",
+              "count": 5,
+              "faded": 2
+            },
+            "answers": [
+              {
+                "number": 5
+              },
+              {
+                "number": 7
+              },
+              {
+                "number": 2
+              },
+              {
+                "number": 3
+              }
+            ],
+            "correctIndex": 3
           }
         ]
       },
@@ -508,7 +508,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                14,
+                16,
+                18
+              ],
+              "step": 2
             },
             "answers": [
               {
@@ -537,7 +543,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                13,
+                14,
+                15
+              ],
+              "step": 1
             },
             "answers": [
               {
@@ -566,7 +578,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                15,
+                16,
+                17
+              ],
+              "step": 1
             },
             "answers": [
               {
@@ -595,7 +613,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                12,
+                13,
+                14
+              ],
+              "step": 1
             },
             "answers": [
               {
@@ -624,7 +648,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                11,
+                12,
+                13
+              ],
+              "step": 1
             },
             "answers": [
               {
@@ -886,7 +916,13 @@
               ]
             },
             "visual": {
-              "kind": "none"
+              "kind": "numberLine",
+              "terms": [
+                11,
+                12,
+                13
+              ],
+              "step": 1
             },
             "answers": [
               {
@@ -943,7 +979,11 @@
               "missing": "none"
             },
             "visual": {
-              "kind": "none"
+              "kind": "tenFrame",
+              "groups": [
+                9,
+                5
+              ]
             },
             "answers": [
               {

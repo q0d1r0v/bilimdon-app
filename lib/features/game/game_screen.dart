@@ -345,10 +345,31 @@ class _GameScreenState extends State<GameScreen>
           },
         BubbleKind.wrong =>
           _wrongVariant == 2 ? l10n.bubbleWrong2 : l10n.bubbleWrong1,
-        BubbleKind.hint =>
-          _hintVariant == 2 ? l10n.bubbleHint2 : l10n.bubbleHint1,
+        BubbleKind.hint => _hintText(l10n),
         BubbleKind.reveal => l10n.bubbleReveal,
       };
+
+  /// Ishora matni savolda VIZUAL bor-yo'qligiga qarab tanlanadi.
+  ///
+  /// Avval `bubbleHint2` («Rasmga qara») vizualsiz savollarda ham chiqardi va
+  /// bola yo'q rasmni izlardi. `bubbleHint1` («birga sanaymiz») esa faqat
+  /// sanaladigan vizualga mos — son chizig'i yoki ustunlarda ma'nosiz.
+  String _hintText(AppLocalizations l10n) {
+    final kind = _controller.current.visual?.kind ?? VisualKind.none;
+    return switch (kind) {
+      // Vizual yo'q (shakl savollari, 1-3 prototipi) — javoblarga ishora.
+      VisualKind.none => l10n.bubbleHintLook,
+      // Sanaladigan vizual: «birga sanaymiz» ham, «rasmga qara» ham mos.
+      VisualKind.count ||
+      VisualKind.grouped ||
+      VisualKind.faded ||
+      VisualKind.tenFrame ||
+      VisualKind.groupRows =>
+        _hintVariant == 2 ? l10n.bubbleHint2 : l10n.bubbleHint1,
+      // Sanash mos kelmaydigan vizual — faqat «rasmga qara».
+      VisualKind.numberLine || VisualKind.bars => l10n.bubbleHint2,
+    };
+  }
 
   Color get _bubbleBackground => switch (_controller.bubbleKind) {
         BubbleKind.correct => FarmColors.correctBg,
