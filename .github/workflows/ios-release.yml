@@ -59,10 +59,6 @@ jobs:
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
 
           echo "$P12_BASE64" | base64 --decode > "$RUNNER_TEMP/cert.p12"
-          # TEMPORARY DEBUG — reveals no secret material, only sizes/hashes.
-          echo "DEBUG cert.p12 bytes: $(wc -c < "$RUNNER_TEMP/cert.p12")"
-          echo "DEBUG cert.p12 sha256: $(shasum -a 256 "$RUNNER_TEMP/cert.p12")"
-          echo "DEBUG P12_PASSWORD length: ${#P12_PASSWORD}"
           security import "$RUNNER_TEMP/cert.p12" \
             -k "$KEYCHAIN" -P "$P12_PASSWORD" \
             -T /usr/bin/codesign -T /usr/bin/security
