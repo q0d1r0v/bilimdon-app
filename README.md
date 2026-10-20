@@ -69,8 +69,13 @@ qayta yuklashda progress saqlanishi.
 ## Muhim qoidalar
 
 - `tokens.dart` dan tashqarida xom hex rang YO'Q
-- Release manifest'da INTERNET permission YO'Q (faqat debug'da) — to'liq offline
+- O'yin to'liq offline ishlaydi. Release'dagi INTERNET/ACCESS_NETWORK_STATE/BILLING
+  ruxsatlari FAQAT Play Billing kutubxonasidan (`in_app_purchase`) keladi —
+  boshqa tarmoq so'rovi qo'shmang
 - Analytics/ads/tracker SDK YO'Q — Play Families "No data collected"
+- Pul bilan bog'liq har bir tugma ota-onalar darvozasi (`showParentGate`) ortida;
+  3–6-boblar bir martalik `full_unlock` xaridi bilan ochiladi
+  (`ProgressStore.freeChapters`, `lib/core/purchases/purchase_service.dart`)
 - ★/♥/alanga — matn glifi emas, chizilgan widget (Fredoka'da bu glifllar yo'q)
 - Yurak hech qachon o'yinni bloklamaydi (floor = 1), taymer faqat bonus rejimda
 
@@ -91,6 +96,9 @@ tools/            — build-vaqt savol generatori (Node)
 
 1. Play Console akkaunt turini tekshiring (yangi shaxsiy akkaunt = 12 tester × 14 kun closed test!)
 2. Privacy policy URL tayyorlang (offline bo'lsa ham majburiy)
-3. `aapt dump permissions` — INTERNET yo'qligiga ishonch hosil qiling
+3. `aapt dump permissions` — faqat BILLING, INTERNET, ACCESS_NETWORK_STATE (Billing'dan)
+   va DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION bo'lishi kerak
 4. Data safety: "No data collected"; IARC: Everyone/3+
+5. Play Console → One-time products: `full_unlock` faol; App Store Connect'da
+   xuddi shu ID bilan Non-Consumable
 # bilimdon-app

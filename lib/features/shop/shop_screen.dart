@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../characters/sheep.dart';
 import '../../core/persistence/progress_store.dart';
+import '../../core/purchases/purchase_service.dart';
 import '../../core/theme/tokens.dart';
 import '../../l10n/app_localizations.dart';
 import '../../scene/hill.dart';
@@ -9,15 +10,19 @@ import '../../scene/sky.dart';
 import '../../widgets/icons.dart';
 import '../../widgets/pill.dart';
 import '../../widgets/speech_bubble.dart';
+import 'full_unlock_card.dart';
 import 'shop_catalog.dart';
 import 'shop_item_card.dart';
 
 /// Do‘kon ekrani: osmon gradientli tepa panel (qo‘y sotuvchi + tanga pill),
 /// pastda krem fonda ikki bo‘lim — bezaklar va aksessuarlar.
 class ShopScreen extends StatelessWidget {
-  const ShopScreen({super.key, required this.store});
+  const ShopScreen({super.key, required this.store, this.purchases});
 
   final ProgressStore store;
+
+  /// «To'liq versiya» kartasi uchun; berilmasa (testlar) karta ko'rinmaydi.
+  final PurchaseService? purchases;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +44,10 @@ class ShopScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+                    if (purchases case final purchases?) ...[
+                      FullUnlockCard(store: store, purchases: purchases),
+                      const SizedBox(height: 20),
+                    ],
                     _SectionHeader(title: l10n.shopCatPowerup),
                     const SizedBox(height: 8),
                     _ItemGrid(items: powerupItems, store: store),

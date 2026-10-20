@@ -28,6 +28,10 @@ class ProgressStore extends ChangeNotifier {
   /// bog'lanmasligi uchun takrorlangan).
   static const levelsPerChapter = 6;
 
+  /// Tekin boblar soni — undan keyingilari «To'liq versiya» xaridini talab
+  /// qiladi.
+  static const freeChapters = 2;
+
   /// Do'kon slotlari: 4 hayvon aksessuari + 4 dekor o'rni.
   static const shopSlots = [
     'cow',
@@ -64,6 +68,10 @@ class ProgressStore extends ChangeNotifier {
 
   /// Power-up (sarflanadigan) zaxiralari: id → soni.
   final Map<String, int> _powerups = {};
+
+  /// «To'liq versiya» sotib olinganmi (do'kon xaridining mahalliy keshi —
+  /// PurchaseService ishga tushganda tiklaydi).
+  bool _fullUnlocked = false;
 
   /// Profilni diskdan yuklaydi (yo'q/buzilgan bo'lsa — defaultlar).
   static Future<ProgressStore> load({DateTime Function()? nowProvider}) async {
@@ -125,9 +133,16 @@ class ProgressStore extends ChangeNotifier {
   /// Profildagi «N-daraja» ko'rsatkichi.
   int get displayLevel => 1 + totalStars ~/ 6;
 
-  /// Daraja ochiqmi. `1-1` doim ochiq; bobdagi N-daraja — N−1 da
-  /// kamida 1 yulduz bo'lsa; C-bobning 1-darajasi — C−1 bobning barcha
-  /// 6 darajasida kamida 1 yulduz bo'lsa.
+  /// «To'liq versiya» sotib olinganmi.
+  bool get fullUnlocked => _fullUnlocked;
+
+  /// Bob xarid qilinmagani uchun yopiqmi (tekin boblar doim `false`).
+  bool isChapterPaywalled(int chapter) =>
+      chapter > freeChapters && !_fullUnlocked;
+
+  /// Daraja ochiqmi. Pullik bob xaridsiz doim yopiq; `1-1` doim ochiq;
+  /// bobdagi N-daraja — N−1 da kamida 1 yulduz bo'lsa; C-bobning
+  /// 1-darajasi — C−1 bobning barcha 6 darajasida kamida 1 yulduz bo'lsa.
   bool isLevelUnlocked(String levelId) {
     final parts = levelId.split('-');
     if (parts.length != 2) return false;
@@ -137,6 +152,7 @@ class ProgressStore extends ChangeNotifier {
       return false;
     }
     if (level > levelsPerChapter) return false;
+    if (isChapterPaywalled(chapter)) return false;
     if (chapter == 1 && level == 1) return true;
     if (level > 1) return starsFor('$chapter-${level - 1}') >= 1;
     for (var l = 1; l <= levelsPerChapter; l++) {
@@ -221,6 +237,14 @@ class ProgressStore extends ChangeNotifier {
       if (_equipped[slot] == itemId) return;
       _equipped[slot] = itemId;
     }
+    await _persist();
+    notifyListeners();
+  }
+
+  /// Do'kon xaridi tasdiqlanganda/tiklanganda chaqiriladi.
+  Future<void> setFullUnlocked(bool value) async {
+    if (value == _fullUnlocked) return;
+    _fullUnlocked = value;
     await _persist();
     notifyListeners();
   }
@@ -353,6 +377,7 @@ class ProgressStore extends ChangeNotifier {
           'equipped': Map<String, String>.from(_equipped),
         },
         'powerups': Map<String, int>.from(_powerups),
+        'purchases': {'fullUnlock': _fullUnlocked},
       };
 
   /// Diskdan o'qish — har maydon himoyalangan, buzilgan qiymatlar
@@ -444,6 +469,11 @@ class ProgressStore extends ChangeNotifier {
           _powerups[id] = count;
         }
       });
+    }
+
+    final purchases = doc['purchases'];
+    if (purchases is Map) {
+      _fullUnlocked = _asBool(purchases['fullUnlock'], false);
     }
   }
 

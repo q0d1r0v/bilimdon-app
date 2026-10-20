@@ -29,6 +29,7 @@ class LevelNode extends StatefulWidget {
     required this.state,
     this.stars = 0,
     this.onPlay,
+    this.onLockedTap,
     this.ctaBelow = false,
   });
 
@@ -42,6 +43,10 @@ class LevelNode extends StatefulWidget {
 
   /// Faol/bajarilgan tugun bosilganda (Sfx.tap dan keyin) chaqiriladi.
   final VoidCallback? onPlay;
+
+  /// Qulflangan tugun bosilganda (wiggle'dan keyin) — masalan pullik bobda
+  /// «To'liq versiya» oynasini ochish uchun.
+  final VoidCallback? onLockedTap;
 
   /// BOSHLA! tugmasi doira OSTIDA chizilsin (odatda tugma ustida turadi;
   /// dizayn-fazoning yuqori qatoridagi tugunlarda tepada joy yo’q —
@@ -128,6 +133,7 @@ class _LevelNodeState extends State<LevelNode>
     if (widget.state == LevelNodeState.locked) {
       AudioService.instance.play(Sfx.thunk);
       _wiggle.forward(from: 0);
+      widget.onLockedTap?.call();
       return;
     }
     AudioService.instance.play(Sfx.tap);

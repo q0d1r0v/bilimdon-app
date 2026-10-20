@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../content/content_repository.dart';
 import '../../core/audio/audio_service.dart';
 import '../../core/persistence/progress_store.dart';
+import '../../core/purchases/purchase_service.dart';
 import '../../core/theme/tokens.dart';
 import '../../core/utils/css_shapes.dart';
 import '../../l10n/app_localizations.dart';
@@ -13,9 +14,12 @@ import '../shop/shop_screen.dart';
 
 /// Ildiz qobiq: IndexedStack + 4 tabli pastki nav (prototip dizayni).
 class RootShell extends StatefulWidget {
-  const RootShell({super.key, required this.store, this.repo});
+  const RootShell({super.key, required this.store, this.repo, this.purchases});
 
   final ProgressStore store;
+
+  /// Do'kon xaridlari; berilmasa (testlar) — sotib olish o'chiq.
+  final PurchaseService? purchases;
 
   /// Oldindan isitilgan kontent repo (main.dart) — xaritaga uzatiladi.
   final ContentRepository? repo;
@@ -33,6 +37,9 @@ class _RootShellState extends State<RootShell> {
   /// hech qachon dispose qilmaydi, shuning uchun kalit orqali tiklanadi.
   int _profileEpoch = 0;
 
+  late final PurchaseService _purchases =
+      widget.purchases ?? UnavailablePurchaseService();
+
   @override
   void initState() {
     super.initState();
@@ -47,10 +54,14 @@ class _RootShellState extends State<RootShell> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final screens = <Widget>[
-      MapScreen(store: widget.store, repo: widget.repo),
-      ShopScreen(store: widget.store),
+      MapScreen(store: widget.store, repo: widget.repo, purchases: _purchases),
+      ShopScreen(store: widget.store, purchases: _purchases),
       ContentsScreen(store: widget.store),
-      ProfileScreen(key: ValueKey(_profileEpoch), store: widget.store),
+      ProfileScreen(
+        key: ValueKey(_profileEpoch),
+        store: widget.store,
+        purchases: _purchases,
+      ),
     ];
     return Scaffold(
       body: Column(

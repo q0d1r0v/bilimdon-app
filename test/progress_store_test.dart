@@ -390,4 +390,49 @@ void main() {
       expect(store.totals.levelsCompleted, 2);
     });
   });
+
+  group('full unlock (pullik boblar)', () {
+    Future<void> starChapters(ProgressStore store, int upTo) async {
+      for (var ch = 1; ch <= upTo; ch++) {
+        for (var l = 1; l <= ProgressStore.levelsPerChapter; l++) {
+          await star(store, '$ch-$l');
+        }
+      }
+    }
+
+    test('chapter 3 stays locked without purchase, opens after it', () async {
+      final store = await loadStore();
+      await starChapters(store, 2);
+      expect(store.fullUnlocked, isFalse);
+      expect(store.isChapterPaywalled(2), isFalse);
+      expect(store.isChapterPaywalled(3), isTrue);
+      expect(store.isLevelUnlocked('3-1'), isFalse,
+          reason: '2-bob to’liq, lekin xarid yo’q');
+
+      var notified = 0;
+      store.addListener(() => notified++);
+      await store.setFullUnlocked(true);
+      expect(notified, 1);
+      expect(store.isChapterPaywalled(3), isFalse);
+      expect(store.isLevelUnlocked('3-1'), isTrue);
+      expect(store.isLevelUnlocked('3-2'), isFalse,
+          reason: 'xarid ketma-ketlik qoidasini bekor qilmaydi');
+    });
+
+    test('purchase flag persists across reload', () async {
+      final store = await loadStore();
+      await store.setFullUnlocked(true);
+      final reloaded = await loadStore();
+      expect(reloaded.fullUnlocked, isTrue);
+    });
+
+    test('old profile without purchases field loads locked', () async {
+      SharedPreferences.setMockInitialValues({
+        'profile_v1': '{"schemaVersion":1,"coins":120}',
+      });
+      final store = await loadStore();
+      expect(store.coins, 120);
+      expect(store.fullUnlocked, isFalse);
+    });
+  });
 }

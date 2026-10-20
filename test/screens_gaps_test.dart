@@ -11,6 +11,7 @@ import 'package:math_farm/core/audio/audio_service.dart';
 import 'package:math_farm/core/persistence/progress_store.dart';
 import 'package:math_farm/core/theme/tokens.dart';
 import 'package:math_farm/features/game/game_screen.dart';
+import 'package:math_farm/features/map/level_node.dart';
 import 'package:math_farm/features/map/map_screen.dart';
 import 'package:math_farm/features/profile/parent_gate.dart';
 import 'package:math_farm/features/profile/profile_screen.dart';
@@ -175,11 +176,17 @@ void main() {
       await tester.pumpWidget(wrapHome(MapScreen(store: store)));
       await pumpFrames(tester, 10);
 
-      // Yangi profil: butun scroll-xaritada faqat 1-1 faol, qolgan 35 qulf.
-      expect(find.byType(LockIcon), findsNWidgets(35));
+      // Yangi profil: butun scroll-xaritada faqat 1-1 faol, qolgan 35 tugun
+      // qulf (pullik 3–6-boblardagi «To'liq versiya» belgilari hisobga
+      // kirmaydi).
+      final nodeLocks = find.descendant(
+        of: find.byType(LevelNode),
+        matching: find.byType(LockIcon),
+      );
+      expect(nodeLocks, findsNWidgets(35));
 
       // Ko'rinadigan qulflangan tugunni tanlab bosamiz (scroll-xarita).
-      final locked = find.byType(LockIcon).last;
+      final locked = nodeLocks.last;
       await tester.ensureVisible(locked);
       await pumpFrames(tester, 2);
       await tester.tap(locked, warnIfMissed: false);
