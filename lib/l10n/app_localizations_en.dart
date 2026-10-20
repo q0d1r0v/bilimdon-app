@@ -532,4 +532,53 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get failExit => 'Exit';
+
+  @override
+  String get unlockTitle => 'Full version';
+
+  @override
+  String get unlockSubtitle =>
+      'Pay once — chapters 3–6 and 24 new levels, forever';
+
+  @override
+  String unlockBuy(String price) {
+    return 'Unlock · $price';
+  }
+
+  @override
+  String get unlockOpen => 'Unlock';
+
+  @override
+  String get unlockOwned => 'Full version unlocked. Thank you!';
+
+  @override
+  String get unlockOwnedShort => 'Purchased';
+
+  @override
+  String get unlockPending => 'Waiting for payment…';
+
+  @override
+  String get unlockError => 'Purchase failed. Please try again.';
+
+  @override
+  String get unlockUnavailable =>
+      'Store is unavailable right now. Check your internet connection.';
+
+  @override
+  String get unlockChapterLocked => 'In the full version';
+
+  @override
+  String get unlockForParents => 'Purchases need a parent’s approval';
+
+  @override
+  String get unlockClose => 'Close';
+
+  @override
+  String get restorePurchases => 'Restore purchases';
+
+  @override
+  String get restoreDone => 'Purchase restored!';
+
+  @override
+  String get restoreNothing => 'No purchases to restore';
 }

@@ -530,4 +530,53 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get failExit => 'Chiqish';
+
+  @override
+  String get unlockTitle => 'To’liq versiya';
+
+  @override
+  String get unlockSubtitle =>
+      'Bir marta to’lang — 3–6-boblar va 24 ta yangi daraja butunlay ochiladi';
+
+  @override
+  String unlockBuy(String price) {
+    return 'Ochish · $price';
+  }
+
+  @override
+  String get unlockOpen => 'Ochish';
+
+  @override
+  String get unlockOwned => 'To’liq versiya ochilgan. Rahmat!';
+
+  @override
+  String get unlockOwnedShort => 'Sotib olingan';
+
+  @override
+  String get unlockPending => 'To’lov kutilmoqda…';
+
+  @override
+  String get unlockError => 'Xarid amalga oshmadi. Qayta urinib ko’ring.';
+
+  @override
+  String get unlockUnavailable =>
+      'Do’kon hozircha mavjud emas. Internetni tekshiring.';
+
+  @override
+  String get unlockChapterLocked => 'To’liq versiyada';
+
+  @override
+  String get unlockForParents => 'Xarid faqat ota-onalar tasdig’i bilan';
+
+  @override
+  String get unlockClose => 'Yopish';
+
+  @override
+  String get restorePurchases => 'Xaridlarni tiklash';
+
+  @override
+  String get restoreDone => 'Xarid tiklandi!';
+
+  @override
+  String get restoreNothing => 'Tiklanadigan xarid topilmadi';
 }

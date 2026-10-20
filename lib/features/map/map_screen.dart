@@ -8,6 +8,7 @@ import '../../content/content_repository.dart';
 import '../../content/models.dart';
 import '../../core/audio/audio_service.dart';
 import '../../core/persistence/progress_store.dart';
+import '../../core/purchases/purchase_service.dart';
 import '../../core/theme/tokens.dart';
 import '../../core/utils/dotted_path_painter.dart';
 import '../../effects/ambient_life.dart';
@@ -23,7 +24,9 @@ import '../../scene/sky.dart';
 import '../../scene/sun.dart';
 import '../../widgets/chunky_button.dart';
 import '../../widgets/speech_bubble.dart';
+import '../../scene/lock_icon.dart';
 import '../game/game_screen.dart';
+import '../purchase/full_unlock_sheet.dart';
 import 'chapter_banner.dart';
 import 'level_node.dart';
 import 'map_header.dart';
@@ -46,9 +49,12 @@ const List<Offset> _nodeAnchors = [
 /// uzun scroll-yo'lda ustma-ust turadi (pastda 1-bob, tepada oxirgi bob);
 /// ochilganda joriy darajaga avto-scroll qilinadi.
 class MapScreen extends StatefulWidget {
-  const MapScreen({super.key, required this.store, this.repo});
+  const MapScreen({super.key, required this.store, this.repo, this.purchases});
 
   final ProgressStore store;
+
+  /// Pullik boblar uchun xarid servisi; berilmasa (testlar) — o'chiq.
+  final PurchaseService? purchases;
 
   /// Tashqaridan (main.dart) oldindan isitilgan repo — splash paytida
   /// kontent yuklanib bo'ladi, xarita bo'sh kadr ko'rsatmaydi. Berilmasa
@@ -66,6 +72,9 @@ class _MapScreenState extends State<MapScreen> {
 
   /// `final` emas: xatodan keyin qayta urinishda qayta tayinlanadi.
   late Future<List<ChapterDef>> _chapters;
+
+  late final PurchaseService _purchases =
+      widget.purchases ?? UnavailablePurchaseService();
 
   final ScrollController _scroll = ScrollController();
 
@@ -135,6 +144,10 @@ class _MapScreenState extends State<MapScreen> {
     return null;
   }
 
+  void _openUnlock() {
+    showFullUnlockSheet(context, store: widget.store, purchases: _purchases);
+  }
+
   Future<void> _playLevel(LevelDef level) async {
     await Navigator.of(context).push(
       MaterialPageRoute<void>(
@@ -168,7 +181,15 @@ class _MapScreenState extends State<MapScreen> {
               listenable: widget.store,
               builder: (context, _) {
                 final active = _activeLevel(chapters);
-                final currentChapter = active?.$1 ?? chapters.last;
+                // Tekin boblar tugab, keyingisi xaridsiz yopiq — banner
+                // oxirgi bobni emas, shu yopiq bobni ko'rsatadi.
+                final paywalled = active == null
+                    ? chapters
+                        .where((c) => widget.store.isChapterPaywalled(c.id))
+                        .firstOrNull
+                    : null;
+                final currentChapter =
+                    active?.$1 ?? paywalled ?? chapters.last;
                 final activeLevelId = active?.$2.id;
                 return Column(
                   children: [
@@ -179,6 +200,7 @@ class _MapScreenState extends State<MapScreen> {
                         chapterNumber: currentChapter.id,
                         levelIndex: active?.$2.index,
                         levelTotal: currentChapter.levels.length,
+                        onUnlock: paywalled != null ? _openUnlock : null,
                       ),
                     ),
                     Expanded(
@@ -384,11 +406,62 @@ class _MapScreenState extends State<MapScreen> {
         ..._chapterAnimals(chapter, l10n),
         // Daraja tugunlari.
         ..._buildNodes(chapter, activeLevelId),
+        if (store.isChapterPaywalled(chapter.id))
+          Positioned(
+            left: 0,
+            right: 0,
+            top: 160,
+            child: Center(child: _paywallBadge(l10n)),
+          ),
         if (isTop)
           const Positioned.fill(
             child: AmbientFliers(width: _designW, height: _designH),
           ),
       ],
+    );
+  }
+
+  /// Pullik bob ustidagi belgi: qulf + «To'liq versiyada» + «Ochish».
+  Widget _paywallBadge(AppLocalizations l10n) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: .92),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: FarmColors.cardBorder, width: 3),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const LockIcon(),
+          const SizedBox(height: 6),
+          Text(
+            l10n.unlockChapterLocked,
+            style: const TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.w800,
+              color: FarmColors.inkOlive,
+            ),
+          ),
+          const SizedBox(height: 8),
+          ChunkyButton(
+            color: FarmColors.green,
+            darkColor: FarmColors.greenDark,
+            borderRadius: 14,
+            ledge: 4,
+            padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 8),
+            onPressed: _openUnlock,
+            child: Text(
+              l10n.unlockOpen,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w800,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -568,6 +641,7 @@ class _MapScreenState extends State<MapScreen> {
 
   List<Widget> _buildNodes(ChapterDef chapter, String? activeLevelId) {
     final store = widget.store;
+    final paywalled = store.isChapterPaywalled(chapter.id);
     final nodes = <Widget>[];
     final count = chapter.levels.length < _nodeAnchors.length
         ? chapter.levels.length
@@ -601,6 +675,7 @@ class _MapScreenState extends State<MapScreen> {
             ctaBelow: ctaBelow,
             onPlay:
                 state == LevelNodeState.locked ? null : () => _playLevel(level),
+            onLockedTap: paywalled ? _openUnlock : null,
           ),
         ),
       );

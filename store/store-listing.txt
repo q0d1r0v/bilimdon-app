@@ -15,18 +15,21 @@ nomlarini YOZMANG — "qisqa videolar / cheksiz scrolling" deb umumiy yozamiz.
 Welcome to Bilimdon — our first version! A friendly farm adventure that
 turns math into play for kids aged 4-8: counting, addition, subtraction
 and multiplication across 6 chapters and 36 levels. Fully offline, no
-ads, no internet, and no data collected.
+ads, and no data collected. Chapters 1-2 are free; unlock the full
+version with a single one-time purchase.
 </en-US>
 
 --- uz (agar o'zbek tilini qo'shsangiz) ---
 Bilimdon'ning birinchi versiyasi! 4-8 yosh uchun matematikani o'yinga
 aylantiradigan mehribon ferma sarguzashti: sanash, qo'shish, ayirish va
 ko'paytirish - 6 bob, 36 daraja. To'liq internetsiz, reklamasiz.
+1-2-boblar tekin, to'liq versiya - bir martalik xarid.
 
 --- ru (agar rus tilini qo'shsangiz) ---
 Первая версия Bilimdon! Добрая фермерская игра, которая превращает
 математику в удовольствие для детей 4-8 лет: счёт, сложение, вычитание и
 умножение - 6 глав, 36 уровней. Полностью офлайн, без рекламы.
+Главы 1-2 бесплатно, полная версия - разовая покупка.
 
 
 ########################################################################
@@ -54,7 +57,9 @@ Why parents love Bilimdon:
 🧠 Builds logical thinking and real math skills, step by step
 🚜 A cute farm world with animals, levels and rewards
 🎯 6 chapters, 36 levels - from counting 1-5 to multiplication
-🔒 100% kid-safe: no ads, no internet, no data collected, no in-app purchases
+🔒 100% kid-safe: no ads, no data collected
+🎁 Chapters 1-2 free; one-time purchase unlocks all - no subscriptions,
+   and purchases sit behind a parent check
 📴 Works fully offline - play anywhere, anytime
 🌍 3 languages: Uzbek, Russian, English
 
@@ -74,7 +79,9 @@ Ota-onalar nega yoqtiradi:
 🧠 Mantiqiy fikrlash va matematikani bosqichma-bosqich o'rgatadi
 🚜 Hayvonlar, darajalar va sovg'alarga to'la yoqimli ferma dunyosi
 🎯 6 bob, 36 daraja - 1-5 sanashdan ko'paytirishgacha
-🔒 100% xavfsiz: reklama yo'q, internet yo'q, ma'lumot yig'ilmaydi, ilova ichida xarid yo'q
+🔒 100% xavfsiz: reklama yo'q, ma'lumot yig'ilmaydi
+🎁 1-2-boblar tekin; hammasi bir martalik xarid bilan ochiladi - obuna yo'q,
+   xarid faqat ota-ona tekshiruvidan keyin
 📴 To'liq internetsiz ishlaydi - istalgan joyda
 🌍 3 til: o'zbek, rus, ingliz
 
@@ -94,7 +101,9 @@ Bilimdon - весёлая игра, с которой ребёнок полюб�
 🧠 Развивает логическое мышление и настоящие навыки счёта
 🚜 Милый мир фермы с животными, уровнями и наградами
 🎯 6 глав, 36 уровней - от счёта 1-5 до умножения
-🔒 100% безопасно: без рекламы, без интернета, без сбора данных, без встроенных покупок
+🔒 100% безопасно: без рекламы, без сбора данных
+🎁 Главы 1-2 бесплатно; всё открывается разовой покупкой - без подписок,
+   покупка только после проверки для родителей
 📴 Работает полностью офлайн - играйте где угодно
 🌍 3 языка: узбекский, русский, английский
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'content/content_repository.dart';
 import 'core/persistence/progress_store.dart';
+import 'core/purchases/purchase_service.dart';
 import 'core/theme/theme.dart';
 import 'features/onboarding/onboarding_screen.dart';
 import 'features/shell/root_shell.dart';
@@ -12,9 +13,17 @@ import 'l10n/app_localizations.dart';
 /// va natija ham satrlarga, ham temaga beriladi — ru tizim tilida shrift
 /// Nunito bo'lishi shart (Fredoka'da kirill glifi yo'q, DESIGN_SPEC).
 class MathFarmApp extends StatefulWidget {
-  const MathFarmApp({super.key, required this.store, this.content});
+  const MathFarmApp({
+    super.key,
+    required this.store,
+    this.content,
+    this.purchases,
+  });
 
   final ProgressStore store;
+
+  /// Do'kon xaridlari (main.dart). Testlarda null — sotib olish o'chiq.
+  final PurchaseService? purchases;
 
   /// Oldindan isitilgan kontent repo (main.dart) — RootShell/xaritaga uzatiladi
   /// (splash tugaganда xarita bo'sh osmon kadri ko'rsatmaydi). Testlarда null.
@@ -100,7 +109,11 @@ class _MathFarmAppState extends State<MathFarmApp>
           // setOnboarded(true) avtomatik RootShell'ga almashtiradi.
           home: SplashGate(
             child: widget.store.onboarded
-                ? RootShell(store: widget.store, repo: widget.content)
+                ? RootShell(
+                    store: widget.store,
+                    repo: widget.content,
+                    purchases: widget.purchases,
+                  )
                 : OnboardingScreen(store: widget.store),
           ),
         );

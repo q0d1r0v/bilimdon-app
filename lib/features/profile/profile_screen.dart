@@ -3,20 +3,25 @@ import 'package:flutter/material.dart';
 import '../../characters/animal.dart';
 import '../../core/audio/audio_service.dart';
 import '../../core/persistence/progress_store.dart';
+import '../../core/purchases/purchase_service.dart';
 import '../../core/theme/tokens.dart';
 import '../../l10n/app_localizations.dart';
 import '../../scene/lock_icon.dart';
 import '../../scene/sky.dart';
 import '../../widgets/chunky_button.dart';
+import '../purchase/full_unlock_sheet.dart';
 import 'parent_gate.dart';
 
 /// Profil ekrani: osmon fonli sarlavha (avatar + ism + daraja),
 /// avatar tanlash qatori, sozlamalar kartasi va ota-onalar
 /// darvozasi ortidagi statistika kartasi.
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key, required this.store});
+  const ProfileScreen({super.key, required this.store, this.purchases});
 
   final ProgressStore store;
+
+  /// «Xaridlarni tiklash» uchun; berilmasa (testlar) qator ko'rinmaydi.
+  final PurchaseService? purchases;
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -411,6 +416,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
               _langChip('en', 'English'),
             ],
           ),
+          if (widget.purchases case final purchases?) ...[
+            const SizedBox(height: 10),
+            ListenableBuilder(
+              listenable: purchases,
+              builder: (context, _) => TextButton(
+                onPressed: purchases.status == UnlockStatus.busy
+                    ? null
+                    : () => restorePurchasesWithFeedback(context, purchases),
+                child: Text(
+                  l10n.restorePurchases,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w700,
+                    color: FarmColors.blue,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ],
       ),
     );

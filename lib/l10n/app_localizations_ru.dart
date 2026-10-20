@@ -533,4 +533,53 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get failExit => 'Выход';
+
+  @override
+  String get unlockTitle => 'Полная версия';
+
+  @override
+  String get unlockSubtitle =>
+      'Один платёж — главы 3–6 и 24 новых уровня навсегда';
+
+  @override
+  String unlockBuy(String price) {
+    return 'Открыть · $price';
+  }
+
+  @override
+  String get unlockOpen => 'Открыть';
+
+  @override
+  String get unlockOwned => 'Полная версия открыта. Спасибо!';
+
+  @override
+  String get unlockOwnedShort => 'Куплено';
+
+  @override
+  String get unlockPending => 'Ожидаем оплату…';
+
+  @override
+  String get unlockError => 'Покупка не прошла. Попробуйте ещё раз.';
+
+  @override
+  String get unlockUnavailable =>
+      'Магазин сейчас недоступен. Проверьте интернет.';
+
+  @override
+  String get unlockChapterLocked => 'В полной версии';
+
+  @override
+  String get unlockForParents => 'Покупка — только с подтверждением родителей';
+
+  @override
+  String get unlockClose => 'Закрыть';
+
+  @override
+  String get restorePurchases => 'Восстановить покупки';
+
+  @override
+  String get restoreDone => 'Покупка восстановлена!';
+
+  @override
+  String get restoreNothing => 'Покупок для восстановления не найдено';
 }

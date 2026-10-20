@@ -170,5 +170,20 @@
   "itemPowerCoinX2": "Монеты ×2",
   "failTitle": "Попробуем ещё!",
   "failRetry": "Заново",
-  "failExit": "Выход"
+  "failExit": "Выход",
+  "unlockTitle": "Полная версия",
+  "unlockSubtitle": "Один платёж — главы 3–6 и 24 новых уровня навсегда",
+  "unlockBuy": "Открыть · {price}",
+  "unlockOpen": "Открыть",
+  "unlockOwned": "Полная версия открыта. Спасибо!",
+  "unlockOwnedShort": "Куплено",
+  "unlockPending": "Ожидаем оплату…",
+  "unlockError": "Покупка не прошла. Попробуйте ещё раз.",
+  "unlockUnavailable": "Магазин сейчас недоступен. Проверьте интернет.",
+  "unlockChapterLocked": "В полной версии",
+  "unlockForParents": "Покупка — только с подтверждением родителей",
+  "unlockClose": "Закрыть",
+  "restorePurchases": "Восстановить покупки",
+  "restoreDone": "Покупка восстановлена!",
+  "restoreNothing": "Покупок для восстановления не найдено"
 }

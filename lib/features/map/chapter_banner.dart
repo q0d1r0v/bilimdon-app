@@ -4,6 +4,8 @@ import '../../characters/chick.dart';
 import '../../core/theme/tokens.dart';
 import '../../l10n/app_localizations.dart';
 import '../../scene/barn.dart';
+import '../../scene/lock_icon.dart';
+import '../../widgets/chunky_button.dart';
 
 /// Bob raqami (1..6) → (NOM, mavzu). Banner/xarita/mundarija shu yagona
 /// manbadan foydalanadi.
@@ -24,6 +26,7 @@ class ChapterBanner extends StatelessWidget {
     required this.chapterNumber,
     this.levelIndex,
     this.levelTotal = 6,
+    this.onUnlock,
   });
 
   /// Ko’rsatilayotgan bob raqami (1..3).
@@ -33,6 +36,9 @@ class ChapterBanner extends StatelessWidget {
   /// (bob tugagan) progress ko'rsatilmaydi.
   final int? levelIndex;
   final int levelTotal;
+
+  /// Berilsa — bob xaridsiz yopiq: o'ngda «Ochish» tugmasi chiqadi.
+  final VoidCallback? onUnlock;
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +92,31 @@ class ChapterBanner extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 8),
-          if (levelIndex != null)
+          if (onUnlock != null)
+            ChunkyButton(
+              color: FarmColors.yellow,
+              darkColor: FarmColors.yellowDark,
+              borderRadius: 14,
+              ledge: 3,
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+              onPressed: onUnlock,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const LockIcon(color: FarmColors.inkDark),
+                  const SizedBox(width: 6),
+                  Text(
+                    l10n.unlockOpen,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w800,
+                      color: FarmColors.inkDark,
+                    ),
+                  ),
+                ],
+              ),
+            )
+          else if (levelIndex != null)
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               decoration: BoxDecoration(

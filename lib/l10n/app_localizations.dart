@@ -1035,6 +1035,96 @@ abstract class AppLocalizations {
   /// In uz, this message translates to:
   /// **'Chiqish'**
   String get failExit;
+
+  /// No description provided for @unlockTitle.
+  ///
+  /// In uz, this message translates to:
+  /// **'To’liq versiya'**
+  String get unlockTitle;
+
+  /// No description provided for @unlockSubtitle.
+  ///
+  /// In uz, this message translates to:
+  /// **'Bir marta to’lang — 3–6-boblar va 24 ta yangi daraja butunlay ochiladi'**
+  String get unlockSubtitle;
+
+  /// No description provided for @unlockBuy.
+  ///
+  /// In uz, this message translates to:
+  /// **'Ochish · {price}'**
+  String unlockBuy(String price);
+
+  /// No description provided for @unlockOpen.
+  ///
+  /// In uz, this message translates to:
+  /// **'Ochish'**
+  String get unlockOpen;
+
+  /// No description provided for @unlockOwned.
+  ///
+  /// In uz, this message translates to:
+  /// **'To’liq versiya ochilgan. Rahmat!'**
+  String get unlockOwned;
+
+  /// No description provided for @unlockOwnedShort.
+  ///
+  /// In uz, this message translates to:
+  /// **'Sotib olingan'**
+  String get unlockOwnedShort;
+
+  /// No description provided for @unlockPending.
+  ///
+  /// In uz, this message translates to:
+  /// **'To’lov kutilmoqda…'**
+  String get unlockPending;
+
+  /// No description provided for @unlockError.
+  ///
+  /// In uz, this message translates to:
+  /// **'Xarid amalga oshmadi. Qayta urinib ko’ring.'**
+  String get unlockError;
+
+  /// No description provided for @unlockUnavailable.
+  ///
+  /// In uz, this message translates to:
+  /// **'Do’kon hozircha mavjud emas. Internetni tekshiring.'**
+  String get unlockUnavailable;
+
+  /// No description provided for @unlockChapterLocked.
+  ///
+  /// In uz, this message translates to:
+  /// **'To’liq versiyada'**
+  String get unlockChapterLocked;
+
+  /// No description provided for @unlockForParents.
+  ///
+  /// In uz, this message translates to:
+  /// **'Xarid faqat ota-onalar tasdig’i bilan'**
+  String get unlockForParents;
+
+  /// No description provided for @unlockClose.
+  ///
+  /// In uz, this message translates to:
+  /// **'Yopish'**
+  String get unlockClose;
+
+  /// No description provided for @restorePurchases.
+  ///
+  /// In uz, this message translates to:
+  /// **'Xaridlarni tiklash'**
+  String get restorePurchases;
+
+  /// No description provided for @restoreDone.
+  ///
+  /// In uz, this message translates to:
+  /// **'Xarid tiklandi!'**
+  String get restoreDone;
+
+  /// No description provided for @restoreNothing.
+  ///
+  /// In uz, this message translates to:
+  /// **'Tiklanadigan xarid topilmadi'**
+  String get restoreNothing;
 }
 
 class _AppLocalizationsDelegate

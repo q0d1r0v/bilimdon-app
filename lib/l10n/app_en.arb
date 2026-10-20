@@ -155,5 +155,20 @@
   "itemPowerCoinX2": "Coins ×2",
   "failTitle": "Let’s try again!",
   "failRetry": "Retry",
-  "failExit": "Exit"
+  "failExit": "Exit",
+  "unlockTitle": "Full version",
+  "unlockSubtitle": "Pay once — chapters 3–6 and 24 new levels, forever",
+  "unlockBuy": "Unlock · {price}",
+  "unlockOpen": "Unlock",
+  "unlockOwned": "Full version unlocked. Thank you!",
+  "unlockOwnedShort": "Purchased",
+  "unlockPending": "Waiting for payment…",
+  "unlockError": "Purchase failed. Please try again.",
+  "unlockUnavailable": "Store is unavailable right now. Check your internet connection.",
+  "unlockChapterLocked": "In the full version",
+  "unlockForParents": "Purchases need a parent’s approval",
+  "unlockClose": "Close",
+  "restorePurchases": "Restore purchases",
+  "restoreDone": "Purchase restored!",
+  "restoreNothing": "No purchases to restore"
 }
